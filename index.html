@@ -23,6 +23,7 @@ img{max-width:100%}
   --swamp:#4a7a2e; --ice:#2a7aa0; --sand:#a8731a; --grave:#8a4f6c; --fort:#5c5f66;
   --stone:#bdb6a6; --iron:#6f767d; --chest:#a0703a; --bone:#e3dccb; --silver:#b4bcc6; --snow:#f4f8fa;
   --f-water:#8cc0db; --f-mud:#8b7556; --f-quick:#b49a6a; --f-pit:#262b27; --f-ice:#d3e9f4; --f-sand:#e3c78c; --f-hot:#e2753d; --f-vine:#6f9a45;
+  --sea:#cfe0e1; --sea-deep:#b2ccd2; --land:#efe9d8; --land-edge:#a99c7c;
   --t:var(--accent);
   --display:"Grenze", "Palatino Linotype", Georgia, serif;
   --body:"Alegreya Sans", "Segoe UI", system-ui, sans-serif;
@@ -35,6 +36,7 @@ img{max-width:100%}
     --swamp:#86b862; --ice:#6cbde0; --sand:#e2ab4a; --grave:#cf8cad; --fort:#a3a7b0;
     --stone:#6c675d; --iron:#5d646e; --chest:#8a5f31; --bone:#b9b2a1; --silver:#9aa3ae; --snow:#c9d3d9;
     --f-water:#2f6e8e; --f-mud:#5a4a36; --f-quick:#76633f; --f-pit:#050706; --f-ice:#3d5b6b; --f-sand:#8f7646; --f-hot:#b5562b; --f-vine:#4d7331;
+    --sea:#122029; --sea-deep:#0a141a; --land:#222821; --land-edge:#56604f;
     color-scheme:dark;
   }
 }
@@ -44,6 +46,7 @@ img{max-width:100%}
   --swamp:#86b862; --ice:#6cbde0; --sand:#e2ab4a; --grave:#cf8cad; --fort:#a3a7b0;
     --stone:#6c675d; --iron:#5d646e; --chest:#8a5f31; --bone:#b9b2a1; --silver:#9aa3ae; --snow:#c9d3d9;
     --f-water:#2f6e8e; --f-mud:#5a4a36; --f-quick:#76633f; --f-pit:#050706; --f-ice:#3d5b6b; --f-sand:#8f7646; --f-hot:#b5562b; --f-vine:#4d7331;
+    --sea:#122029; --sea-deep:#0a141a; --land:#222821; --land-edge:#56604f;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -178,6 +181,59 @@ a.ent:hover{color:var(--accent);text-decoration-style:solid}
 a.ent.t-enemy{text-decoration-color:color-mix(in srgb, var(--open) 75%, transparent)}
 a.ent.t-item{text-decoration-color:color-mix(in srgb, var(--gold) 80%, transparent)}
 
+
+/* world map */
+.wm-head{display:flex;justify-content:flex-end}
+.wm-body .wm-panel{grid-area:auto} .wm-body .wm-wrap{grid-area:auto;min-width:0}
+.wm-body{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:1020px){.wm-body{grid-template-columns:minmax(0,1fr)}}
+.wm-wrap{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--sea);aspect-ratio:10/7}
+.wm-svg{width:100%;height:100%;display:block}
+.wm-sea{fill:var(--sea)} .wm-deep{fill:var(--sea-deep)}
+.g-wave{fill:none;stroke:color-mix(in srgb, var(--fg) 22%, transparent);stroke-width:1}
+.wm-land{fill:var(--land);stroke:var(--land-edge);stroke-width:1.6;stroke-linejoin:round}
+.wm-land.wm-rock{fill:color-mix(in srgb, var(--fg) 55%, var(--land))}
+.g-reed{stroke:color-mix(in srgb, var(--swamp) 75%, transparent);stroke-width:1.2;fill:none;stroke-linecap:round}
+.g-peak{fill:color-mix(in srgb, var(--ice) 22%, var(--land));stroke:color-mix(in srgb, var(--fg) 45%, transparent);stroke-width:.9;stroke-linejoin:round}
+.g-snow{fill:var(--paper)}
+.g-dune{fill:none;stroke:color-mix(in srgb, var(--sand) 75%, transparent);stroke-width:1.3;stroke-linecap:round}
+.g-rock{fill:color-mix(in srgb, var(--sand) 30%, var(--land));stroke:color-mix(in srgb, var(--fg) 40%, transparent);stroke-width:.8}
+.g-dead{fill:none;stroke:color-mix(in srgb, var(--grave) 70%, var(--fg));stroke-width:1.1;stroke-linecap:round}
+.g-pine{fill:color-mix(in srgb, var(--swamp) 55%, var(--land));stroke:color-mix(in srgb, var(--swamp) 70%, var(--fg));stroke-width:.6}
+.g-grass{fill:none;stroke:color-mix(in srgb, var(--swamp) 45%, transparent);stroke-width:1;stroke-linecap:round}
+.wm-region{font-family:var(--display);font-size:19px;font-weight:700;letter-spacing:.16em;text-anchor:middle;fill:color-mix(in srgb, var(--rc) 70%, var(--fg));opacity:.55;pointer-events:none}
+.wm-sealabel{font-family:var(--display);font-size:15px;letter-spacing:.3em;fill:color-mix(in srgb, var(--fg) 40%, transparent);text-anchor:middle;font-style:italic}
+.wm-averra{fill:none;stroke:color-mix(in srgb, var(--fg) 40%, transparent);stroke-width:1.4;stroke-dasharray:4 4} .wm-averra-head{fill:color-mix(in srgb, var(--fg) 40%, transparent)}
+.wm-route{fill:none;stroke:color-mix(in srgb, var(--chest) 85%, var(--fg));stroke-width:3;stroke-linecap:round;stroke-dasharray:1 6.5}
+.wm-route.sea{stroke:color-mix(in srgb, var(--ice) 80%, var(--fg));stroke-dasharray:7 5;stroke-width:2.2}
+.wm-gate circle{stroke:var(--paper);stroke-width:1.6} .wm-gate text{font-family:var(--mono);font-size:7.5px;font-weight:700;text-anchor:middle;fill:var(--paper)}
+.gk-item circle{fill:var(--accent)} .gk-event circle{fill:var(--muted)} .gk-story circle{fill:var(--fg)} .gk-story text{fill:var(--bg)}
+.wm-place{cursor:pointer;outline:none}
+.wm-hit{fill:transparent}
+.wm-halo{fill:color-mix(in srgb, var(--pc) 25%, transparent);stroke:var(--pc);stroke-width:1.2}
+.wm-temple{fill:var(--pc);stroke:var(--paper);stroke-width:1.4}
+.wm-town{fill:var(--paper);stroke:var(--fg);stroke-width:1.4;stroke-linejoin:round}
+.wm-isle,.wm-spot{fill:var(--pc);stroke:var(--paper);stroke-width:1.4}
+.wm-label{font-family:var(--body);font-size:12.5px;font-weight:700;fill:var(--fg);paint-order:stroke;stroke:var(--land);stroke-width:3.5px;stroke-linejoin:round}
+.k-island .wm-label,[data-wm="wm-wreck"] .wm-label,[data-wm="wm-silverspring"] .wm-label,[data-wm="wm-fortress"] .wm-label{stroke:var(--sea)}
+.wm-place:hover .wm-label,.wm-place:focus-visible .wm-label{fill:var(--accent)}
+.wm-place.sel .wm-hit{fill:color-mix(in srgb, var(--accent) 18%, transparent);stroke:var(--accent);stroke-width:2;stroke-dasharray:4 3}
+.wm-place.sel .wm-label{fill:var(--accent)}
+.wm-num{pointer-events:none} .wm-num circle{fill:var(--t, var(--ice));fill:color-mix(in srgb, var(--accent) 85%, var(--fg));stroke:var(--paper);stroke-width:1.4}
+.wm-num text{font-family:var(--mono);font-size:8.5px;font-weight:700;fill:var(--paper);text-anchor:middle}
+.wm-compass circle{fill:var(--paper);stroke:var(--land-edge);stroke-width:1.2;opacity:.85} .wm-compass path{fill:color-mix(in srgb, var(--fg) 35%, transparent)} .wm-compass path.n{fill:var(--open)}
+.wm-compass text{font-family:var(--mono);font-size:10px;font-weight:700;fill:var(--fg);text-anchor:middle}
+.wm-cartouche text{text-anchor:middle;fill:color-mix(in srgb, var(--fg) 70%, transparent)} .wm-cartouche .t{font-family:var(--display);font-size:30px;font-weight:700;letter-spacing:.3em} .wm-cartouche .s{font-family:var(--body);font-size:11px;font-style:italic}
+.hide-story .wm-story,.hide-gates .wm-gates,.hide-opt .opt{display:none}
+.wm-panel h3{font-size:1.6rem}
+.wm-about{font-size:.98rem}
+.wm-list{margin:6px 0 0;padding-left:1.1em;display:flex;flex-direction:column;gap:4px;font-size:.94rem}
+.wm-reach{font-size:.94rem;color:var(--muted);margin-top:4px}
+.wm-chs{display:flex;flex-wrap:wrap;gap:8px}
+.wm-ch{text-decoration:none;display:flex;flex-direction:column;gap:1px;padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--fg)}
+.wm-ch span{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.wm-ch:hover{border-color:var(--accent)}
+a.pill.wm-link{text-decoration:none;color:var(--accent)}
 /* 3D temple maps */
 .m3{display:flex;flex-direction:column;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px;scroll-margin-top:84px}
 .m3-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px}
@@ -307,6 +363,7 @@ a.ent.t-item{text-decoration-color:color-mix(in srgb, var(--gold) 80%, transpare
 <div class="shell">
 <nav class="toc" id="toc" aria-label="Contents">
   <div><h5>Walkthrough</h5><ol id="tocChapters"></ol></div>
+  <div><h5>Atlas</h5><ul><li><a href="#worldmap">World Map</a></li></ul></div>
   <div><h5>Collectibles</h5><ul>
     <li><a href="#fireflies">Mystic Fireflies</a></li>
     <li><a href="#totems">Totems of Strength</a></li>
@@ -343,6 +400,7 @@ a.ent.t-item{text-decoration-color:color-mix(in srgb, var(--gold) 80%, transpare
     <span class="pill room">Room-by-room</span> fully designed temple
     <span class="pill">Outlined</span> story beats from your design doc, puzzles still to design
   </div>
+  <p><a class="m3-read" href="#worldmap" style="display:inline-block;text-decoration:none">Open the world map</a></p>
   <div class="chgrid" id="chGrid"></div>
 </article>
 
@@ -1294,6 +1352,15 @@ a.ent.t-item{text-decoration-color:color-mix(in srgb, var(--gold) 80%, transpare
 <p>The three pieces of Thalos rise out of the broken Crown and flow into the pendant. For the first time, Thalos is whole. He lifts off Liora's arm, and grows, and grows, into the huge owl from her first vision, but no longer cracked. The light spreads out over Hatu.</p>
 <div class="co open" data-label="Open question"><span class="open-q">How does it end?</span> The doc says Liora saves Hatu. Still to decide: does Thalos stay with Liora, or return to the divines? What happens to the Heart, and is Nyrosis still sealed? What happens to Varyon? Does Silverspring rebuild, and does the Consumption fade?</div>
 </div>
+</article>
+
+<!-- WORLD MAP -->
+<article class="page wide" data-page="worldmap" data-title="World Map">
+  <div class="phead" style="--t:var(--ice)">
+    <div class="eyebrow">Atlas</div><h2>World Map</h2>
+    <p class="lede">How the places of Hatu connect. Badges on the roads and sea crossings show what Liora needs to get through, and the numbers show the order the story visits them. Tap a place to see what's there.</p>
+  </div>
+  <section class="m3 wm" id="wmHost"></section>
 </article>
 
 <!-- FIREFLIES -->
@@ -2592,6 +2659,281 @@ window.M3MAPS = {};
 document.querySelectorAll(".page[data-temple]").forEach(ch => { window.M3MAPS[ch.dataset.temple] = build(ch, ch.dataset.temple); });
 })();
 
+// ===== World map of Hatu =====
+const WORLD = {
+ places:[
+  {id:"wm-silverspring", n:"Silverspring", kind:"town", x:292, y:418, ch:[1,7], c:"--accent", lab:"l",
+   about:"The fishing village where the game begins. The founders built it where their ship wrecked on the cliffs, and the spring, the bay and the wreck are why they stayed.",
+   here:["Sword and Falconry Glove (Chapter 1)","Seashell Necklace in Liora's secret basement (Chapter 7, needs the Magnetic Gauntlet)","Totem of Strength #1 from Locked Out","Mystic Fireflies #10 and #11 (basement, tide pools)"],
+   reach:"Start of the game. Roads lead east to the swamp and south to the desert. The sea routes need the Seashell Necklace."},
+  {id:"wm-mother", n:"Mother Firefly's tree", kind:"spot", x:392, y:404, ch:[2], c:"--swamp", lab:"t",
+   about:"A giant cypress glowing from inside, at the swamp's edge. Mother Firefly lives in its hollow and upgrades the Firefly Lantern for every five children returned.",
+   here:["Firefly Lantern","Mystic Firefly #1","Side quest: Mother Firefly's Reunion"],
+   reach:"Along the swamp road, east of Silverspring."},
+  {id:"wm-swamp", n:"Great Swamp", kind:"spot", x:466, y:398, ch:[2], c:"--swamp", lab:"b",
+   about:"Boardwalks over deep mud and quicksand. Before the Mud Boots, the quicksand pits are walls. Afterward they open shortcuts and hidden pockets.",
+   here:["The hanging bean pod (Totem #2, Firefly #2)","Map piece from the snail cartographer","Rovans and Mirelings"],
+   reach:"Open from Silverspring. Quicksand pockets need the Mud Boots."},
+  {id:"wm-rocklets", n:"Rocklet village", kind:"town", x:530, y:356, ch:[2], c:"--swamp", lab:"l",
+   about:"Mossy boulders that are really homes. The Rocklets keep the Temple of Reedtona and only let Liora in once she drives the Rovans off their sacred stone.",
+   here:["Rovan Alpha fight","Mystic Firefly #3 in a hollow stump","A joke for Say Another One, from the Rocklet elder"],
+   reach:"The north boardwalk from the swamp."},
+  {id:"wm-reedtona", n:"Temple of Reedtona", kind:"temple", x:582, y:326, ch:[3], c:"--swamp", lab:"r",
+   about:"A temple built inside and around a gigantic swamp tree. Its piece of Thalos is already gone when Liora arrives.",
+   here:["Mud Boots, from the Gloomstalker","Mystic Firefly #4, Totem of Strength #3","Boss: Bog Guardian. Enchanted Scroll: Gale Wings"],
+   reach:"Across the moat on a bridge of Rocklets, once Liora has helped them."},
+  {id:"wm-emberwick", n:"Emberwick", kind:"town", x:556, y:218, ch:[4], c:"--ice", lab:"l",
+   about:"Three houses and a great stone lantern, trapped inside a blizzard. Every road out loops back into town until the lantern burns again.",
+   here:["Ice Picks and Mystic Firefly #5, in the cave camp","The Abura-sumashi, the lamp-maker, the trapper and the innkeeper","The way-house, a place to rest"],
+   reach:"Up the mountain trail north of the swamp. Leaving needs the great lantern relit."},
+  {id:"wm-homestead", n:"The homestead", kind:"spot", x:624, y:204, ch:[4], c:"--ice", lab:"r",
+   about:"A lonely cabin in a snowy clearing, where a man lives alone after a hard winter.",
+   here:["Side quest: The Homestead (Totem of Strength #4)"],
+   reach:"A side path off the trail above Emberwick. The cliff roses need the Ice Picks."},
+  {id:"wm-glaciora", n:"Glaciora", kind:"town", x:660, y:138, ch:[5], c:"--ice", lab:"l",
+   about:"The Frostmurians' village, carved into a cliff and linked by rope bridges.",
+   here:["Feats of Glaciora (Totem of Strength #5)","Mystic Fireflies #6 to #8","Side quests: Say Another One, The Tupilak"],
+   reach:"Climb the ice walls above Emberwick with the Ice Picks."},
+  {id:"wm-polar", n:"Polar Temple", kind:"temple", x:724, y:92, ch:[6], c:"--ice", lab:"r",
+   about:"Carved into the peak by the Frostmurians' ancestors. Varyon takes its piece of Thalos here.",
+   here:["Magnetic Gauntlet","Mystic Firefly #9, Totem of Strength #6","Boss: Kolvagar. Enchanted Scroll: Phantom Sight"],
+   reach:"Behind the chieftain's hall, once Liora passes the feats."},
+  {id:"wm-wreck", n:"Founders' wreck", kind:"spot", x:226, y:452, ch:[7], c:"--accent", lab:"l",
+   about:"The ship that carried the faithful from Averra lies on the sea floor off Silverspring.",
+   here:["Only reachable with the water parted","A good home for lore and a future collectible"],
+   reach:"Seashell Necklace."},
+  {id:"wm-selene", n:"Selene's Island", kind:"island", x:150, y:486, ch:[8], c:"--ice", lab:"b",
+   about:"Selene's lighthouse, and the house where her descendant Maro lives.",
+   here:["Mirage Mask","Mystic Firefly #12, in the lamp room"],
+   reach:"Walk the strait on the sea floor with the Seashell Necklace."},
+  {id:"wm-bellisle", n:"Bell Isle", kind:"island", x:84, y:584, ch:[8], c:"--ice", lab:"r", opt:true,
+   about:"A drowned bell tower, further out to sea.",
+   here:["Totem of Strength #7, in the risen shrine"],
+   reach:"Seashell Necklace. Optional."},
+  {id:"wm-robots", n:"Hidden robot village", kind:"town", x:520, y:604, ch:[9], c:"--sand", lab:"b",
+   about:"An underground town built from the robots' crashed ship, hidden under a cloaking field.",
+   here:["Sand Rod","Mystic Firefly #13","Map piece at the broken-tooth rock"],
+   reach:"The south road from the coast, through the badlands. Only visible through the Mirage Mask."},
+  {id:"wm-oasis", n:"Mirage oasis", kind:"spot", x:446, y:640, ch:[9], c:"--sand", lab:"l", opt:true,
+   about:"An oasis in the dunes that only exists through the Mirage Mask.",
+   here:["Mystic Firefly #14"],
+   reach:"West of the robot village. Mirage Mask."},
+  {id:"wm-deserttemple", n:"Desert Temple", kind:"temple", x:626, y:616, ch:[10], c:"--sand", lab:"r",
+   about:"A buried tomb in the biggest dune. For once, its piece of Thalos is still waiting.",
+   here:["Sunstone & Moonstone","Mystic Firefly #15, Totem of Strength #8","Boss: The Hollow Pharaoh. Piece of Thalos. Enchanted Scroll: Resonant Strike"],
+   reach:"Mud Boots for the quicksand, the Sand Rod to climb the dune, and the Mirage Mask to find the real door."},
+  {id:"wm-eldergrove", n:"Ruins of Eldergrove", kind:"town", x:778, y:430, ch:[11], c:"--grave", lab:"b",
+   about:"A town crushed by the Obsidian Heart's power. The forest around it has died, and it's always nearly night.",
+   here:["Mystic Fireflies #16 and #17","Map piece on the old road","The graveyard epitaphs, which hold the Bell Tower's answer"],
+   reach:"The old road inland, after the Desert Temple."},
+  {id:"wm-eldertemple", n:"Eldergrove Temple", kind:"temple", x:826, y:392, ch:[12], c:"--grave", lab:"r",
+   about:"A black-stone church that rises out of the ground when the eclipse spreads over the ruins.",
+   here:["Spectral Chain","Totem of Strength #9, Mystic Firefly #18","Boss: The Hollow Archpriest. Varyon takes the Obsidian Heart"],
+   reach:"Overlap the Sunstone and Moonstone pools over the shrine in the ruins."},
+  {id:"wm-fortress", n:"Varyon's Fortress", kind:"temple", x:98, y:236, ch:[13], c:"--fort", lab:"b",
+   about:"Averran warship hulls bolted onto a black rock where the sea is deepest. Far beyond it, to the west, lies Averra.",
+   here:["The Mob Rush arenas","Final boss: Varyon"],
+   reach:"Walk the deepest sea floor with the Seashell Necklace, after Eldergrove."}
+ ],
+ // routes: d = SVG path, sea = crossing the sea floor, gates = [[t along path, badge, label, kind]]
+ routes:[
+  {d:"M292 418 Q340 400 392 404", n:"Swamp road"},
+  {d:"M392 404 Q430 402 466 398", n:"Swamp road"},
+  {d:"M466 398 Q500 384 530 356", n:"North boardwalk"},
+  {d:"M530 356 Q558 344 582 326", n:"Rocklet bridge", gates:[[.5,"!","Help the Rocklets, and they form a bridge","event"]]},
+  {d:"M466 398 Q492 300 556 218", n:"Mountain trail", gates:[[.62,"!","The blizzard closes around Emberwick","event"]]},
+  {d:"M556 218 Q596 176 660 138", n:"Ice walls", gates:[[.25,"!","Relight Emberwick's great lantern to leave","event"],[.68,"IP","Ice Picks to climb the ice walls","item"]]},
+  {d:"M598 178 Q614 196 624 204", n:"Side path", opt:true},
+  {d:"M660 138 Q696 118 724 92", n:"Peak path", gates:[[.5,"!","Pass the Feats of Glaciora","event"]]},
+  {d:"M270 436 Q212 470 150 486", n:"The strait", sea:true, gates:[[.5,"SN","Seashell Necklace: walk the sea floor","item"]]},
+  {d:"M150 486 Q108 532 84 584", n:"Out to Bell Isle", sea:true, opt:true, gates:[[.5,"SN","Seashell Necklace","item"]]},
+  {d:"M272 428 Q248 440 226 452", n:"Down to the wreck", sea:true, opt:true},
+  {d:"M300 440 Q356 520 428 560 Q478 586 520 604", n:"South road", gates:[[.86,"MM","Mirage Mask: the village is cloaked","item"]]},
+  {d:"M520 604 Q576 600 626 616", n:"Into the dunes", gates:[[.35,"MB","Mud Boots for the quicksand","item"],[.72,"SR","Sand Rod to climb the dune","item"]]},
+  {d:"M520 604 Q484 626 446 640", n:"Dune track", opt:true, gates:[[.55,"MM","Mirage Mask","item"]]},
+  {d:"M428 560 Q604 486 778 430", n:"The old road", gates:[[.5,"★","Opens after the Desert Temple","story"]]},
+  {d:"M778 430 Q800 410 826 392", n:"The shrine", gates:[[.5,"SM","An eclipse over the shrine reveals the temple","item"]]},
+  {d:"M262 400 Q168 300 98 236", n:"The deep", sea:true, gates:[[.42,"SN","Seashell Necklace through the deepest water","item"],[.72,"★","After Eldergrove","story"]]}
+ ],
+ story:["wm-silverspring","wm-swamp","wm-reedtona","wm-emberwick","wm-glaciora","wm-polar","wm-silverspring","wm-selene","wm-robots","wm-deserttemple","wm-eldergrove","wm-eldertemple","wm-fortress"],
+ chapterPlace:{1:"wm-silverspring",2:"wm-swamp",3:"wm-reedtona",4:"wm-emberwick",5:"wm-glaciora",6:"wm-polar",7:"wm-silverspring",8:"wm-selene",9:"wm-robots",10:"wm-deserttemple",11:"wm-eldergrove",12:"wm-eldertemple",13:"wm-fortress"}
+};
+
+(function(){
+  const page = document.querySelector('[data-page="worldmap"]'); if(!page) return;
+  const host = page.querySelector("#wmHost");
+  const W = WORLD, byId = Object.fromEntries(W.places.map(p => [p.id, p]));
+  const e = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  let seed = 7;
+  const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const nearPlace = (x, y, r) => W.places.some(p => Math.hypot(p.x - x, p.y - y) < r);
+
+  const land = "M332 0 L1000 0 L1000 700 L706 700 C664 674 604 692 562 680 C502 668 444 690 402 672 C352 650 330 612 302 592 C272 570 252 532 264 502 C274 474 296 458 290 440 C284 424 262 420 268 402 C276 384 254 366 252 344 C248 318 266 302 262 276 C258 248 284 230 280 202 C276 174 300 156 304 128 C308 100 322 78 318 52 C316 30 328 12 332 0 Z";
+  const isles = [
+    {d:"M128 478 C130 460 158 456 172 468 C186 480 178 504 158 508 C138 512 126 496 128 478 Z"},
+    {d:"M74 578 C74 568 92 566 96 576 C100 586 88 594 80 592 C72 590 72 584 74 578 Z"},
+    {d:"M80 230 C82 216 108 212 116 226 C124 240 114 256 98 256 C84 256 78 244 80 230 Z", dark:true}
+  ];
+  const regions = [
+    {n:"The Coast", x:350, y:492, c:"--accent"},
+    {n:"The Great Swamp", x:486, y:440, c:"--swamp"},
+    {n:"The Snowy Mountain", x:770, y:238, c:"--ice"},
+    {n:"The Desert", x:560, y:665, c:"--sand"},
+    {n:"Eldergrove", x:830, y:482, c:"--grave"}
+  ];
+  const fields = [
+    {cx:470, cy:385, rx:120, ry:78, g:"reed", n:70, c:"--swamp"},
+    {cx:640, cy:150, rx:190, ry:110, g:"peak", n:46, c:"--ice"},
+    {cx:552, cy:606, rx:170, ry:66, g:"dune", n:46, c:"--sand"},
+    {cx:440, cy:540, rx:70, ry:30, g:"rock", n:12, c:"--sand"},
+    {cx:800, cy:420, rx:120, ry:92, g:"dead", n:46, c:"--grave"},
+    {cx:350, cy:350, rx:60, ry:70, g:"pine", n:26, c:"--swamp"},
+    {cx:880, cy:230, rx:110, ry:120, g:"pine", n:40, c:"--swamp"},
+    {cx:880, cy:610, rx:110, ry:70, g:"grass", n:30, c:"--swamp"},
+    {cx:640, cy:470, rx:90, ry:50, g:"grass", n:24, c:"--swamp"}
+  ];
+  const glyph = (g, x, y, s) => {
+    switch(g){
+      case "reed": return `<path class="g-reed" d="M${x-3} ${y}l-1 -6M${x} ${y}v-8M${x+3} ${y}l1 -6"/>`;
+      case "peak": { const w = 9*s, h = 12*s; return `<path class="g-peak" d="M${x-w} ${y}L${x} ${y-h}L${x+w} ${y}Z"/><path class="g-snow" d="M${x-w*.38} ${y-h*.62}L${x} ${y-h}L${x+w*.38} ${y-h*.62}L${x+w*.12} ${y-h*.5}L${x-w*.08} ${y-h*.6}Z"/>`; }
+      case "dune": return `<path class="g-dune" d="M${x-9} ${y}Q${x} ${y-7} ${x+9} ${y}"/>`;
+      case "rock": return `<path class="g-rock" d="M${x-5} ${y}L${x-3} ${y-5}L${x+2} ${y-6}L${x+5} ${y}Z"/>`;
+      case "dead": return `<path class="g-dead" d="M${x} ${y}v-9M${x} ${y-5}l-4 -3M${x} ${y-6}l4 -4"/>`;
+      case "pine": return `<path class="g-pine" d="M${x} ${y-10}L${x+5} ${y}H${x-5}Z"/>`;
+      case "grass": return `<path class="g-grass" d="M${x-3} ${y}l1 -4M${x} ${y}v-5M${x+3} ${y}l-1 -4"/>`;
+    }
+    return "";
+  };
+  let terrain = "";
+  fields.forEach(f => {
+    for(let i = 0, tries = 0; i < f.n && tries < f.n * 8; tries++){
+      const a = rnd() * Math.PI * 2, r = Math.sqrt(rnd());
+      const x = Math.round(f.cx + Math.cos(a) * f.rx * r), y = Math.round(f.cy + Math.sin(a) * f.ry * r);
+      if(nearPlace(x, y, 24)) continue;
+      terrain += glyph(f.g, x, y, .8 + rnd() * .6); i++;
+    }
+  });
+  let waves = "";
+  for(let i = 0; i < 46; i++){
+    const x = Math.round(20 + rnd() * 250), y = Math.round(20 + rnd() * 660);
+    if(nearPlace(x, y, 30) || x > 230 && y > 380 && y < 470) continue;
+    waves += `<path class="g-wave" d="M${x-6} ${y}q3 -3 6 0t6 0"/>`;
+  }
+  const routes = W.routes.map((r, i) => `<path id="wmr${i}" class="wm-route${r.sea ? " sea" : ""}${r.opt ? " opt" : ""}" d="${r.d}"><title>${e(r.n)}</title></path>`).join("");
+  const regionLabels = regions.map(r => `<text class="wm-region" x="${r.x}" y="${r.y}" style="--rc:var(${r.c})">${e(r.n.toUpperCase())}</text>`).join("");
+  const labPos = {r:[12, 4, "start"], l:[-12, 4, "end"], b:[0, 20, "middle"], t:[0, -12, "middle"]};
+  const places = W.places.map(p => {
+    let mark;
+    if(p.kind === "temple") mark = `<circle class="wm-halo" cx="${p.x}" cy="${p.y}" r="12"/><path class="wm-temple" d="M${p.x} ${p.y-9}L${p.x+8} ${p.y}L${p.x} ${p.y+9}L${p.x-8} ${p.y}Z"/>`;
+    else if(p.kind === "town") mark = `<path class="wm-town" d="M${p.x-6} ${p.y+5}V${p.y-1}L${p.x} ${p.y-7}L${p.x+6} ${p.y-1}V${p.y+5}Z"/>`;
+    else if(p.kind === "island") mark = `<circle class="wm-isle" cx="${p.x}" cy="${p.y}" r="5"/>`;
+    else mark = `<circle class="wm-spot" cx="${p.x}" cy="${p.y}" r="4"/>`;
+    const [dx, dy, anchor] = labPos[p.lab || "r"];
+    return `<g class="wm-place k-${p.kind}${p.opt ? " opt" : ""}" data-wm="${p.id}" tabindex="0" role="button" aria-label="${e(p.n)}" style="--pc:var(${p.c})"><circle class="wm-hit" cx="${p.x}" cy="${p.y}" r="16"/>${mark}<text class="wm-label" x="${p.x+dx}" y="${p.y+dy}" text-anchor="${anchor}">${e(p.n)}</text></g>`;
+  }).join("");
+
+  host.innerHTML = `
+  <div class="wm-head"><div class="m3-floors" role="toolbar" aria-label="Map layers">
+    <button type="button" data-layer="story" aria-pressed="true">Story order</button>
+    <button type="button" data-layer="gates" aria-pressed="true">What's needed</button>
+    <button type="button" data-layer="opt" aria-pressed="true">Optional places</button>
+    <button type="button" class="wm-reset" hidden>Whole map</button></div></div>
+  <div class="wm-body">
+    <div class="wm-wrap"><svg class="wm-svg" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Map of Hatu">
+      <rect class="wm-sea" x="0" y="0" width="1000" height="700"/>
+      <path class="wm-deep" d="M0 120 C80 140 170 200 190 260 C205 310 140 360 60 360 C30 360 10 350 0 340 Z"/>
+      <g class="wm-waves">${waves}</g>
+      <path class="wm-land" d="${land}"/>
+      ${isles.map(i => `<path class="wm-land${i.dark ? " wm-rock" : ""}" d="${i.d}"/>`).join("")}
+      <g class="wm-terrain">${terrain}</g>
+      ${regionLabels}
+      <text class="wm-sealabel" x="120" y="400">TOWARD AVERRA</text>
+      <path class="wm-averra" d="M66 226 Q40 214 14 208"/><path class="wm-averra-head" d="M14 208l9 -5l-2 9Z"/>
+      <g class="wm-routes">${routes}</g>
+      <g class="wm-gates"></g>
+      <g class="wm-places">${places}</g>
+      <g class="wm-story"></g>
+      <g class="wm-compass" transform="translate(64 70)"><circle r="22"/><path d="M0 -20L5 0L0 20L-5 0Z"/><path class="n" d="M0 -20L5 0L-5 0Z"/><text y="-27">N</text></g>
+      <g class="wm-cartouche" transform="translate(892 650)"><text class="t" y="0">HATU</text><text class="s" y="16">charted by the snail cartographer</text></g>
+    </svg></div>
+    <aside class="m3-panel wm-panel" aria-live="polite"></aside>
+  </div>`;
+  const svg = host.querySelector("svg");
+  // gate badges and story numbers, placed with real path geometry
+  let gates = "";
+  W.routes.forEach((r, i) => {
+    const path = svg.querySelector("#wmr" + i), L = path.getTotalLength ? path.getTotalLength() : 0;
+    (r.gates || []).forEach(([t, g, label, kind]) => {
+      const pt = L ? path.getPointAtLength(L * t) : {x:0, y:0};
+      gates += `<g class="wm-gate gk-${kind}${r.opt ? " opt" : ""}"><title>${e(label)}</title><circle cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="9.5"/><text x="${pt.x.toFixed(1)}" y="${(pt.y + 3.4).toFixed(1)}">${e(g)}</text></g>`;
+    });
+  });
+  svg.querySelector(".wm-gates").innerHTML = gates;
+  const seen = {};
+  svg.querySelector(".wm-story").innerHTML = W.story.map((id, i) => {
+    const p = byId[id], k = seen[id] = (seen[id] || 0) + 1, ox = 14 + (k - 1) * 17;
+    return `<g class="wm-num"><circle cx="${p.x+ox}" cy="${p.y-15}" r="8"/><text x="${p.x+ox}" y="${p.y-11.6}">${i+1}</text></g>`;
+  }).join("");
+
+  const GL = {IP:"Ice Picks", SN:"Seashell Necklace", MM:"Mirage Mask", MB:"Mud Boots", SR:"Sand Rod", SM:"Sunstone & Moonstone"};
+  const panel = host.querySelector(".wm-panel");
+  function showPanel(id){
+    const p = byId[id];
+    const chs = p.ch.map(n => { const c = chapters[n-1]; return c ? `<a class="wm-ch" href="#${c.dataset.page}"><span>Chapter ${n}</span>${e(c.dataset.title)}</a>` : ""; }).join("");
+    panel.innerHTML = `<div class="m3-ph"><div class="eyebrow">${e({temple:"Temple", town:"Town or village", island:"Island", spot:"Place"}[p.kind])}${p.opt ? " · Optional" : ""}</div><h3>${e(p.n)}</h3></div>
+      <p class="wm-about">${e(p.about)}</p>
+      <div><div class="eyebrow">What's here</div><ul class="wm-list">${p.here.map(h => `<li>${e(h)}</li>`).join("")}</ul></div>
+      <div><div class="eyebrow">Getting there</div><p class="wm-reach">${e(p.reach)}</p></div>
+      <div class="wm-chs">${chs}</div>`;
+    if(typeof autolink === "function") autolink(panel);
+  }
+  const VB0 = [0, 0, 1000, 700];
+  let vb = VB0.slice(), raf = 0;
+  function animTo(to){
+    const from = vb.slice(), t0 = performance.now(), reduce = matchMedia("(prefers-reduced-motion: reduce)").matches, dur = reduce ? 0 : 420;
+    cancelAnimationFrame(raf);
+    const step = now => {
+      const k = dur ? Math.min(1, (now - t0) / dur) : 1, q = k < .5 ? 2*k*k : 1 - Math.pow(-2*k + 2, 2)/2;
+      vb = from.map((v, i) => v + (to[i] - v) * q); svg.setAttribute("viewBox", vb.map(n => n.toFixed(1)).join(" "));
+      if(k < 1) raf = requestAnimationFrame(step);
+    };
+    if(dur) raf = requestAnimationFrame(step); else step(t0);
+  }
+  const resetBtn = host.querySelector(".wm-reset");
+  function select(id, zoom){
+    if(!byId[id]) return;
+    svg.querySelectorAll(".wm-place").forEach(g => g.classList.toggle("sel", g.dataset.wm === id));
+    showPanel(id);
+    const narrow = host.querySelector(".wm-wrap").clientWidth < 640;
+    if(zoom !== false && narrow){
+      const p = byId[id], w = 440, h = 308;
+      animTo([Math.max(0, Math.min(1000 - w, p.x - w/2)), Math.max(0, Math.min(700 - h, p.y - h/2)), w, h]);
+      resetBtn.hidden = false;
+    }
+  }
+  host.addEventListener("click", ev => {
+    const lb = ev.target.closest("[data-layer]");
+    if(lb){ const on = lb.getAttribute("aria-pressed") !== "true"; lb.setAttribute("aria-pressed", String(on)); svg.classList.toggle("hide-" + lb.dataset.layer, !on); return; }
+    if(ev.target.closest(".wm-reset")){ animTo(VB0); resetBtn.hidden = true; return; }
+    const pl = ev.target.closest("[data-wm]");
+    if(pl){ select(pl.dataset.wm); }
+  });
+  host.addEventListener("keydown", ev => {
+    const pl = ev.target.closest && ev.target.closest(".wm-place");
+    if(pl && (ev.key === "Enter" || ev.key === " ")){ ev.preventDefault(); select(pl.dataset.wm); }
+  });
+  select("wm-silverspring", false);
+  window.WMSelect = id => select(id);
+
+  // "On the world map" link on every chapter
+  chapters.forEach((c, i) => {
+    const id = W.chapterPlace[i+1], pills = c.querySelector(".phead .pills");
+    if(!id || !pills) return;
+    const a = document.createElement("a"); a.className = "pill wm-link"; a.href = "#" + id; a.textContent = "On the world map";
+    pills.append(a);
+  });
+})();
+
 // Router
 const menuBtn = document.getElementById("menuBtn"), toc = document.getElementById("toc");
 function setMenu(open){ toc.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", String(open)); }
@@ -2606,6 +2948,8 @@ function show(id){
     target = document.getElementById("e-" + id);
   }
   if(!page){ const l = ENTITIES.find(e => e.id === id && e.link); if(l) page = pages.find(p => p.dataset.page === l.link); }
+  let wmTarget = null;
+  if(!page && id && id.startsWith("wm-") && typeof WORLD !== "undefined" && WORLD.places.some(q => q.id === id)){ page = pages.find(p => p.dataset.page === "worldmap"); wmTarget = id; }
   page = page || pages[0];
   pages.forEach(p => p.hidden = p !== page);
   document.querySelectorAll(".toc a").forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + page.dataset.page));
@@ -2620,6 +2964,7 @@ function show(id){
   document.title = page.dataset.page === "home" ? "Hatu Atlas" : page.dataset.title + " · Hatu Atlas";
   setMenu(false);
   window.scrollTo(0, 0);
+  if(wmTarget && window.WMSelect) requestAnimationFrame(() => window.WMSelect(wmTarget));
   if(target){
     requestAnimationFrame(() => {
       target.scrollIntoView({block:"start"});
