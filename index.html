@@ -440,15 +440,22 @@ a.pill.wm-link{text-decoration:none;color:var(--accent)}
 <li><b>Basic swings.</b> Three straw dummies stand in a row. Press attack to swing; pressing it three times in rhythm chains a three-hit combo (a slash, a backhand slash, then a heavier overhead chop). Knock the head off each dummy.</li>
 <li><b>The spin attack.</b> The captain sets up a ring of five dummies around Liora. Hold attack to charge the sword (it glows and hums), then release to spin and hit everything around her. Clearing the ring in one spin ends the drill.</li>
 <li><b>Lock-on.</b> A dummy swings on a rope from the crossbar. Lock on to it: the camera holds it in frame, Liora faces it and walks in a circle around it instead of running away. While locked on, pressing attack while pushing toward the target makes a forward thrust. Hit the swinging dummy three times.</li>
-<li><b>Dodging.</b> The captain swings a long padded pole in wide sweeps. While locked on, jump sidesteps left or right and hops backward; when you're not locked on, it's a dodge roll. Get past three sweeps without being hit, then a quick jab from the captain teaches the backhop.</li>
+<li><b>Dodging.</b> The captain swings a long padded pole in wide sweeps. While locked on, Circle sidesteps left or right and hops backward; when you're not locked on, it's a dodge roll. Get past three sweeps without being hit, then a quick jab from the captain teaches the backhop.</li>
+<li><b>Blocking and parrying.</b> The captain brings the pole down in slow overhead strikes. Hold Triangle and Liora raises her guard: the sword held level in front of her, the flat of the blade braced against her falconry glove. A held block stops the hit but pushes her back a step. Then the captain speeds up, and the drill is timing: press Triangle just as the pole lands, and Liora parries, knocking it aside. The captain staggers, open for a counter. Three parries end the drill.</li>
 <li><b>The sparring match.</b> A fellow trainee with a wooden shield squares up. Hitting the front of the shield just clangs off. The trick is to lock on, sidestep around, and strike from the side or behind. Landing three hits wins. This teaches the idea that comes back with the rat soldiers in the first temple: not every enemy can be hit from the front.</li>
 </ol>
 
 <h3>The first real fight <span class="pill prop">Proposed</span></h3>
 <p>The tower horn sounds again, closer. Three Mirelings, low mud creatures with stubby legs and a glowing crack down their backs, crawl over the training yard fence. They charge in straight lines and can't turn mid-charge, so the move is to sidestep or roll as one charges, then hit it while it skids to a stop. Each takes three hits. Small Goins (the currency of Hatu) and the odd heart pop out of them, which introduces pickups.</p>
 <p>When the last Mireling dissolves, the captain hands Liora a real sword, a plain steel blade from the village forge. It replaces the practice sword and does double the damage.</p>
-<div class="co get" data-label="Item get">Sword. Liora's steel sword. Three-hit combo, spin attack (hold), and a thrust while locked on.</div>
-<div class="co open" data-label="Open question"><span class="open-q">Does the sword get upgrades, and does Liora get a shield?</span> A shield would add blocking, but the dodge-and-sidestep moves already do a lot of that work, and Thalos fills the "get past a guard" role. A sword upgrade could come from the robots in the desert, or from the Frostmurian forge.</div>
+<div class="co get" data-label="Item get">Sword. Liora's steel sword. Three-hit combo, spin attack (hold), a thrust while locked on, and block and parry on Triangle.</div>
+<div class="co story" data-label="Design note: no shield">Liora never carries a shield, because her left arm is the falconry arm and Thalos lands on it. She blocks with the sword itself: blade held level, braced against the glove.
+<ul>
+<li><b>Hold Triangle to block.</b> It stops most hits from the front, but heavy attacks like slams and charges push her back or break the guard.</li>
+<li><b>Press Triangle as a hit lands to parry.</b> The enemy staggers, open for a combo or a free Thalos dive.</li>
+<li><b>A perfect parry, in the last instant, knocks projectiles back.</b> That includes Rovan dives, fireballs and shadow bolts.</li>
+</ul>
+The Silverspring smith upgrades the sword once the forge reopens after Chapter 10.</div>
 
 <h3>The Elder's summons</h3>
 <p>A messenger, a breathless kid from the market, runs into the yard. The Elder wants Liora at his house, now. The way up the hill is open to explore: villagers chat about the monsters, the net-mender has rumors, and a man in the market square is stuck outside his own front door (the Locked Out side quest, which opens once Liora has the Falconry Glove).</p>
@@ -2011,7 +2018,7 @@ const ENTITIES = [
 // ---------- ITEMS ----------
 {id:"sword", page:"items", group:"Equipment", type:"Weapon", n:"Sword", where:"The watch captain, after training", ch:1, al:["sword","Sword"], pal:["#c9ced3","#6b5a44","#3a3a3a"],
  look:"A plain steel blade from Silverspring's forge, with a leather-wrapped grip and a crossguard shaped like a fish tail.",
- does:"Three-hit combo, charged spin attack (hold), and a forward thrust while locked on. Double the damage of the practice sword."},
+ does:"Three-hit combo, charged spin attack (hold), and a forward thrust while locked on. Triangle blocks with the blade braced against the falconry glove; pressing it as a hit lands parries. Double the damage of the practice sword."},
 {id:"glove", page:"items", group:"Equipment", type:"Key item", n:"Falconry Glove", where:"The old man's hut", ch:1, al:["Falconry Glove","glove"], pal:["#6b4a32","#a892ff","#3a2a1e"],
  look:"A worn leather falconer's glove reaching to the elbow, with a purple stone set into the cuff.",
  does:"Summons Thalos. Tap the Thalos button to send him to a target, hold it to fly him yourself, tap again to call him back. Upgraded by Enchanted Scrolls."},
