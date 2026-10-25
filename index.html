@@ -237,6 +237,12 @@ a.ent.t-item{text-decoration-color:color-mix(in srgb, var(--gold) 80%, transpare
 .hide-story .wm-story,.hide-gates .wm-gates,.hide-opt .opt,.hide-perch .wm-perches{display:none}
 .wm-lake{fill:var(--sea);stroke:var(--land-edge);stroke-width:1.2}
 .wm-gorge{fill:none;stroke:color-mix(in srgb, var(--fg) 60%, var(--land));stroke-width:3.5;stroke-linecap:round}
+.wm-zone{fill:color-mix(in srgb, var(--pc) 14%, transparent);stroke:color-mix(in srgb, var(--pc) 65%, transparent);stroke-width:1.3;stroke-dasharray:5 3;cursor:pointer}
+.wm-zone:hover,.wm-zone.sel{fill:color-mix(in srgb, var(--pc) 28%, transparent);stroke:var(--pc)}
+.k-area .wm-label{font-style:italic;font-weight:600;font-size:12px;fill:color-mix(in srgb, var(--pc) 55%, var(--fg))}
+.wm-river{fill:none;stroke:color-mix(in srgb, var(--ice) 40%, var(--sea));stroke-width:4.5;stroke-linecap:round;pointer-events:none} .wm-river.thin{stroke-width:3}
+.wm-riverlabel{font-family:var(--display);font-style:italic;font-size:11px;letter-spacing:.14em;fill:color-mix(in srgb, var(--ice) 70%, var(--fg));pointer-events:none}
+.wm-route.raft{stroke:color-mix(in srgb, var(--ice) 85%, var(--fg));stroke-dasharray:2 5;stroke-width:3}
 .wm-ruin{fill:var(--stone);stroke:var(--fg);stroke-width:1.1;stroke-linejoin:round}
 .wm-perch{pointer-events:auto} .wm-perch path{fill:var(--accent);stroke:var(--paper);stroke-width:1} .wm-perch circle{fill:var(--paper)}
 .wm-panel h3{font-size:1.6rem}
@@ -377,7 +383,7 @@ a.pill.wm-link{text-decoration:none;color:var(--accent)}
 <div class="shell">
 <nav class="toc" id="toc" aria-label="Contents">
   <div><h5>Walkthrough</h5><ol id="tocChapters"></ol></div>
-  <div><h5>Atlas</h5><ul><li><a href="#worldmap">World Map</a></li><li><a href="#fields">The Council Fields</a></li></ul></div>
+  <div><h5>Atlas</h5><ul><li><a href="#worldmap">World Map</a></li><li><a href="#fields">The Council Fields</a></li><li><a href="#wilds">Between the Regions</a></li></ul></div>
   <div><h5>Collectibles</h5><ul>
     <li><a href="#fireflies">Mystic Fireflies</a></li>
     <li><a href="#totems">Totems of Strength</a></li>
@@ -520,7 +526,7 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 <div class="co totem" data-label="Totem of Strength #1">Reward for Locked Out. Four Totems of Strength add one heart to Liora's health.</div>
 
 <h3>Leaving Silverspring</h3>
-<p>When Liora reaches the east gate, Thalos speaks through the pendant. He can feel one piece of himself to the east, in the Temple of Reedtona in the Great Swamp, and it's the nearest. The watch captain and Wren see her off at the gate. Beyond it, the road runs out into the Council Fields, the open heart of Hatu, and the swamp road branches off to the northeast just past the old man's hut.</p>
+<p>When Liora reaches the east gate, Thalos speaks through the pendant. He can feel one piece of himself to the east, in the Temple of Reedtona in the Great Swamp, and it's the nearest. The watch captain and Wren see her off at the gate. Beyond it, the road runs out into the Council Fields, the open heart of Hatu, and from the Council ruins the river road follows the river Silver north toward the swamp.</p>
 </div>
 </article>
 
@@ -528,7 +534,8 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 <article class="page" data-page="ch2" data-title="The Great Swamp" data-region="The Great Swamp" data-status="outlined" data-color="--swamp"
   data-goals="Meet Mother Firefly and get the Firefly Lantern|Help the hanging bean pod|Earn the Rocklets' trust|Reach the Temple of Reedtona">
 <div class="prose">
-<p>The swamp road branches northeast from the Council Fields, just past the old man's hut. Within a few minutes, the dirt road turns to a rotting boardwalk, the trees close in, and the light turns green. The Great Swamp is the first real region of the game, and it's built to show players two things they can't handle yet: deep mud and quicksand.</p>
+<p>From the Council ruins, the river road follows the river Silver north, and within a minute the fields give way to the <a href="#wilds">Reed Delta</a>, where the river splits into dozens of shallow channels between islands of reeds. Liora crosses on the Rocklets' old stepping stones, which sink slowly under her, so she has to keep moving. Where a channel is too wide, Thalos carries a plank across from the far bank and drops it into place. Rovans dive at her from the dead willows.</p>
+<p>On the first bend of the river stands Mother Firefly's tree. Past it, the channels thicken into mud and a rotting boardwalk leads east into the Great Swamp. To the north, Liora can see the river coming down out of a canyon, with a grey quicksand marsh at its foot: the Gorge, and the way to the mountain, for later. The Great Swamp is the first real region of the game, and it's built to show players two things they can't handle yet: deep mud and quicksand.</p>
 
 <h3>Getting around the swamp</h3>
 <ul>
@@ -539,7 +546,7 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 </ul>
 
 <h3>Mother Firefly</h3>
-<p>Near the swamp's entrance, a giant cypress tree glows from inside. In a hollow at its base lives Mother Firefly, a firefly the size of a cat whose abdomen glows like a lantern. She's lonely. Her 25 children have all flown off to see the world, and she wants a family reunion. She hands Liora a small glass lantern and asks her to bring them home.</p>
+<p>On the first bend of the river in the Reed Delta, a giant cypress tree glows from inside. In a hollow at its base lives Mother Firefly, a firefly the size of a cat whose abdomen glows like a lantern. She's lonely. Her 25 children have all flown off to see the world, and she wants a family reunion. She hands Liora a small glass lantern and asks her to bring them home.</p>
 <div class="co get" data-label="Item get">Firefly Lantern. Holds Mystic Fireflies. When one is nearby, the lantern pulses; walk close and it drifts inside. Bring them back to Mother Firefly; she upgrades the lantern for every 5.</div>
 <p>As soon as Liora has the lantern, it starts pulsing. One of Mother Firefly's children is hiding in the reeds right beside the tree, as a tutorial catch.</p>
 <div class="co ff" data-label="Mystic Firefly #1">In the reeds beside Mother Firefly's tree.</div>
@@ -711,7 +718,7 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 <div class="co tip" data-label="Tip">With the Mud Boots, the swamp is now easy to get around. Pockets of the swamp blocked by quicksand earlier are open now, and they're good places for future fireflies and Totems.</div>
 
 <h3>The foothills</h3>
-<p>The mountain trail leaves the Council Fields heading north, along the swamp's western edge. Right at its foot, the trail drops into a wide marsh where the swamp has spread over the old road: grey quicksand from one bank to the other, with the tops of old trail markers poking out of it. Anyone who came this way earlier saw it and had to turn back. In the Mud Boots, Liora walks straight across.</p>
+<p>The way to the mountain is the Gorge, the river's canyon, which climbs north out of the Reed Delta. Right at its foot, the river spreads into a wide marsh that has swallowed the old road: grey quicksand from one bank to the other, with the tops of old trail markers poking out of it. Anyone who came this way earlier saw it and had to turn back. In the Mud Boots, Liora walks straight across.</p>
 <p>On the far bank, the old road runs into a stone gatehouse built across the trail, with a heavy wooden gate shut tight. On top sits a big wooden wind wheel, grey with moss, geared to the winch that lifts the gate. It was built to be turned by the mountain wind, but down here the swamp air is dead still, and the wheel hasn't moved in years. Thalos can say so if you reach it early: "There's no wind down here to turn that." Fly Thalos up in front of the wheel, hold LT to hover, and press RT. The wing blast catches the sails and the wheel creaks around, a little more with every blast. Four or five blasts in a row wind the gate all the way up, and it locks open for good.</p>
 <p>Past the marsh, the ground rises into pine forest and then rocky foothills. Snow starts to show up on the ground, then gets deeper. Mirelings give way to <b>Frigidu</b> as Liora climbs: small, quick ice imps covered in plates of ice armor. They hop in and swipe with claws. A full combo shatters the armor, and two more hits finish them. If one is standing on ice or snow when its armor breaks, it rebuilds the armor from the ground in a few seconds, so knock them onto bare rock first, or kill them fast.</p>
 <div class="co mappc" data-label="Map Piece">The snail cartographer is at the foot of the mountain trail, where the foothills begin. He sells a map of the mountain. Notice that the map shows a small village partway up the trail, but nothing around it: just white.</div>
@@ -979,7 +986,7 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 <article class="page" data-page="ch7" data-title="Return to Silverspring" data-region="Silverspring" data-status="outlined" data-color="--accent"
   data-goals="Return to Silverspring|Find the note in Liora's house|Open the secret basement|Get the Seashell Necklace">
 <div class="prose">
-<p>Varyon has two pieces of Thalos. The last one is hidden in the desert, and Thalos tells Liora she'll need something from Silverspring to find it. The way home goes down the mountain, back past the swamp, and along the coast road.</p>
+<p>Varyon has two pieces of Thalos. The last one is hidden in the desert, and Thalos tells Liora she'll need something from Silverspring to find it. The way home is down the Gorge to the Reed Delta, where the Rocklets have moored a raft for her. It rides the river all the way down past the fields to Silverspring's bay. From now on, the raft is a one-way shortcut home.</p>
 
 <h3>Smoke on the coast</h3>
 <p>As Liora comes over the last hill above Silverspring, she sees smoke. The village is mostly destroyed. The watchtower has collapsed and its rope bridge hangs in two halves down the cliff, half the houses are burnt out, and the docks are smashed. Boats are sunk at their moorings. The music cuts out.</p>
@@ -1019,7 +1026,7 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 <p>Selene was a Silverspring explorer in the Second Age, and the only person before Liora to carry the Pendant of Thalos. She went against the elders' wishes, set out on expeditions with Thalos on her arm, found the desert temple, and helped the robots who crashed beside it. The village shunned her for it, and she moved out to a small island off the coast, leaving the glove and the necklace behind for whoever Thalos chose next. Her descendant still lives on the island, and Liora is descended from the family that stayed.</p>
 
 <h3>Crossing the strait</h3>
-<p>This is the Seashell Necklace's big set piece. From the rocky point south of Silverspring, Liora walks into the sea, and keeps walking. The water rises higher and higher on either side as the seabed drops away, until the walls tower over her and the light turns blue-green.</p>
+<p>This is the Seashell Necklace's big set piece. From the rocky point a few minutes down the <a href="#wilds">Shore</a> south of Silverspring, Liora walks into the sea, and keeps walking. The water rises higher and higher on either side as the seabed drops away, until the walls tower over her and the light turns blue-green.</p>
 <ul>
 <li>Fish swim inside the walls, and if Liora gets close, they press against the edge of the water to look at her.</li>
 <li>Partway across, a huge dark shape glides through the wall on one side, keeping pace with Liora. It never attacks, but the music goes tense.</li>
@@ -1064,7 +1071,7 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 <article class="page" data-page="ch9" data-title="The Hidden Village" data-region="The desert" data-status="outlined" data-color="--sand"
   data-goals="Find the cloaked robot village with the Mirage Mask|Hear the story of Selene|Get the Sand Rod">
 <div class="prose">
-<p>The desert is where no one goes. That's why the divines hid the last piece of Thalos here, and why Varyon hasn't found it yet. The south road leaves the Council Fields, runs past the last farms into rocky badlands, and then the dunes begin.</p>
+<p>The desert is where no one goes. That's why the divines hid the last piece of Thalos here, and why Varyon hasn't found it yet. South of the Council Fields, the grass gives out into the <a href="#wilds">Badlands</a>, red rock canyons along a dry riverbed that branch and dead-end in the heat haze. The real way follows the riverbed. At the far end, the dunes begin. (Players who'd rather can walk the seabed south from Selene's Island instead, and come ashore on the desert's beach.)</p>
 
 <h3>Crossing the desert</h3>
 <ul>
@@ -1223,9 +1230,9 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 <p>For the first time, Liora is ahead of Varyon: she has the desert's piece of Thalos. The last temple holds the Obsidian Heart, the gem the Shadow Titan Nyrosis is sealed inside. Thalos knows that if Varyon gets it, the Heart's power will make him nearly impossible to stop.</p>
 
 <h3>The road to Eldergrove</h3>
-<p>Eldergrove lies at the end of the old road east from the Council Fields, in a valley of old forest. As Liora gets closer, the forest dies around her: the trees turn grey and leafless, the grass turns to ash, and the light dims to a constant dusk even in the middle of the day. Every so often the screen pulses faintly, like a heartbeat. That's the Heart, and it gets stronger the closer Liora gets.</p>
+<p>Eldergrove lies in an upland valley of old forest where the mountain, the fields and the desert meet, and three roads lead into it: the old road east from the Council Fields, the High Pass down from Glaciora, and the Dry Canyon up from the desert (see <a href="#wilds">Between the Regions</a>). The old road is the obvious one. As Liora gets closer, the forest dies around her: the trees turn grey and leafless, the grass turns to ash, and the light dims to a constant dusk even in the middle of the day. Every so often the screen pulses faintly, like a heartbeat. That's the Heart, and it gets stronger the closer Liora gets.</p>
 <h3>The Heart's mist</h3>
-<p>Where the old road enters the dead forest, a wall of black mist rolls across it, as tall as the trees. It's the Obsidian Heart's power leaking out. It swallows light, and anyone who walks into it is pushed back out, coughing. Players who came this way early found the road ending here.</p>
+<p>Where the old road enters the dead forest, a wall of black mist rolls across it, as tall as the trees. It's the Obsidian Heart's power leaking out. It swallows light, and anyone who walks into it is pushed back out, coughing. Players who came this way early found the road ending here. The same mist closes the top of the Dry Canyon and the foot of the High Pass, so whichever way Liora comes in, the Sunstone gets her through.</p>
 <p>The mist can't stand daylight. Throw the Sunstone into it, and inside the pool of daylight the mist burns back to show the road underneath. Walk to the edge of the light, call the stone back, and throw it again, working down the road in hops. Or fly Thalos ahead carrying the Sunstone, and walk in the clear patch under him. The mist closes behind as the light moves on.</p>
 <p>Thalos goes quiet on this road. When he does speak, he sounds uneasy.</p>
 <p>Enemies here are leftovers of the town: <b>Vorrik</b> skeletons that pull themselves back together after being knocked apart, unless the Sunstone burns the bones; and <b>Myrkan</b> wraiths that drift through walls at dusk. They can't be hurt at all in daylight, but here, it's always nearly night.</p>
@@ -1433,7 +1440,7 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 <article class="page wide" data-page="worldmap" data-title="World Map">
   <div class="phead" style="--t:var(--ice)">
     <div class="eyebrow">Atlas</div><h2>World Map</h2>
-    <p class="lede">How the places of Hatu connect. Badges on the roads and sea crossings show what Liora needs to get through, and the numbers show the order the story visits them. Tap a place to see what's there.</p>
+    <p class="lede">How the places of Hatu connect. Badges on the roads and sea crossings show what Liora needs to get through, and the numbers show the order the story visits them. The shaded areas are the in-between areas that link the regions, and the blue line is the river Silver. Tap a place or an area to see what's there.</p>
   </div>
   <section class="m3 wm" id="wmHost"></section>
 </article>
@@ -1443,26 +1450,26 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
   <div class="phead" style="--t:var(--accent)">
     <div class="eyebrow">Atlas</div><h2>The Council Fields</h2>
     <div class="pills"><span class="pill prop">Proposed</span><a class="pill wm-link" href="#wm-council">On the world map</a></div>
-    <p class="lede">The open heart of Hatu. Every road out to the regions starts here, and the fields keep changing as Liora gets new items and the clock turns.</p>
+    <p class="lede">The open heart of Hatu, with the Council ruins in the middle. Three roads leave the fields for the regions, and the fields keep changing as Liora gets new items and the clock turns. The regions also connect to each other; see <a href="#wilds">Between the Regions</a>.</p>
   </div>
   <div class="prose">
     <p>Silverspring's east gate opens straight onto the fields: rolling grassland dotted with old stone walls, lone trees and the occasional shepherd's hut. They're small and dense on purpose. It takes about a minute to cross from one side to the other, and there's something to find in every direction.</p>
 
     <h3>Roads out</h3>
     <ul>
-      <li><b>West:</b> the east gate road, back to Silverspring and the coast.</li>
-      <li><b>Northeast:</b> the swamp road, past Mother Firefly's tree to the Great Swamp.</li>
-      <li><b>North:</b> the mountain trail, along the swamp's western edge and up into the snow toward Emberwick. Its foot crosses a quicksand marsh, and a gatehouse blocks the far bank.</li>
-      <li><b>South:</b> the south road, past the last farms and into the badlands. Past the badlands, a sandstorm guards the deep desert.</li>
+      <li><b>West:</b> the east gate road, back to Silverspring. From there, the Shore runs south along the cliffs.</li>
+      <li><b>North:</b> the river road, following the river Silver upstream into the <a href="#wilds">Reed Delta</a>. From the delta, the boardwalk goes east into the Great Swamp, and the Gorge climbs north to the mountain.</li>
+      <li><b>South:</b> into the Badlands, red rock canyons along a dry riverbed. Past them, a sandstorm guards the deep desert.</li>
       <li><b>East:</b> the old road to Eldergrove, where it disappears into a wall of black mist.</li>
     </ul>
 
-    <h3>Gates out of the fields</h3>
+    <h3>Gates</h3>
     <p>Every road is open to walk down from the start, so players can see where they'll go later. What stops them is always something in the world that an item gets past. Each gate is a teaser: you see it early, and you remember it when you get the thing that opens it.</p>
     <div class="tbl"><table><thead><tr><th>Road</th><th>What's in the way</th><th>What gets you past</th><th>When</th></tr></thead><tbody>
-      <tr><td>Mountain trail</td><td>A wide marsh of quicksand at the foot of the trail, swallowing the old path, then a gatehouse whose wind wheel won't turn in the still swamp air</td><td>Mud Boots across the marsh, then Thalos's wing blast (Gale Wings) to turn the wheel and lift the gate</td><td>After Chapter 3</td></tr>
-      <tr><td>South road</td><td>Past the badlands, a sandstorm that turns Liora around and walks her back out</td><td>Selene's map, which marks the landmarks that lead through it</td><td>After Chapter 8</td></tr>
-      <tr><td>Old road</td><td>A wall of black mist from the Obsidian Heart, which swallows light and pushes anyone back</td><td>Daylight from the Sunstone burns a path through it</td><td>After Chapter 10</td></tr>
+      <tr><td>The Gorge, from the Reed Delta</td><td>A wide marsh of quicksand at the Gorge's foot, swallowing the old path, then a gatehouse whose wind wheel won't turn in the still air</td><td>Mud Boots across the marsh, then Thalos's wing blast (Gale Wings) to turn the wheel and lift the gate</td><td>After Chapter 3</td></tr>
+      <tr><td>The Badlands</td><td>At the far end, a sandstorm that turns Liora around and walks her back out</td><td>Selene's map, which marks the landmarks that lead through it</td><td>After Chapter 8</td></tr>
+      <tr><td>Old road, High Pass and Dry Canyon</td><td>A wall of black mist from the Obsidian Heart at the end of all three roads into Eldergrove, which swallows light and pushes anyone back</td><td>Daylight from the Sunstone burns a path through it</td><td>After Chapter 10</td></tr>
+      <tr><td>High Pass</td><td>Just past Glaciora's eastern gate, a collapsed iron bridge hanging down a crevasse</td><td>The Magnetic Gauntlet pulls it back up</td><td>After Chapter 6</td></tr>
       <tr><td>The deep sea</td><td>Deep water, and a storm hiding the fortress</td><td>Seashell Necklace, once the storm breaks</td><td>After Chapter 12</td></tr>
     </tbody></table></div>
     <div class="co tip" data-label="Nudges, not walls">Thalos can comment when Liora reaches a gate too early, so players know it's for later: "That sand would swallow us whole," at the marsh, or "We'd never find our way in that storm," at the sandstorm. He never stops her or turns her around himself. The world does that.</div>
@@ -1473,7 +1480,7 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
     <div class="co story" data-label="Story (proposed)">Before the fortress, the peoples of Hatu answer Thalos's call and meet here again: the Rocklet elder, the Frostmurian chieftain, the robots' leader, Maro, and Silverspring's Elder. The Council of Guardians reforms for the first time since the Third Age, and each people sends Liora off with a gift for the final climb.</div>
 
     <h3>Owl perches</h3>
-    <p>Carved owl perches stand in the fields and near every region's entrance. The first time Liora reaches one, she sends Thalos to land on it, and it's unlocked for good. From the map screen, pick any unlocked perch, and Thalos carries Liora there.</p>
+    <p>Carved owl perches stand in the fields and at the entrance to every region. The first time Liora reaches one, she sends Thalos to land on it, and it's unlocked for good. From the map screen, pick any unlocked perch, and Thalos carries Liora there.</p>
     <ul>
       <li>Council ruins (the first one, unlocked in Chapter 2)</li>
       <li>Silverspring, by the east gate</li>
@@ -1482,24 +1489,24 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
       <li>Outside the robot village</li>
       <li>The old road to Eldergrove</li>
       <li>Selene's Island</li>
-      <li>Windy lookout, across the gorge</li>
+      <li>Windy lookout, across the ravine</li>
+      <li>Mother Firefly's tree, in the Reed Delta</li>
     </ul>
     <div class="co tip" data-label="Why owls">Thalos is an owl, so fast travel can be him carrying Liora. It also echoes the owl statues of the older Zelda games, without being a copy.</div>
 
     <h3>Day and night in the fields</h3>
     <p>The fields are where the day/night cycle shows most.</p>
     <ul>
-      <li><b>By day:</b> Mirelings come out of the mud by the streams, and Rovans glide over from the swamp edge. Farmers and travelers walk the roads, and the merchant's camp is open.</li>
+      <li><b>By day:</b> Mirelings come out of the mud by the streams, and Rovans glide over from the Reed Delta. Farmers and travelers walk the roads, and the merchant's camp is open.</li>
       <li><b>At night:</b> packs of Gloamhounds hunt in the open grass, and the merchant packs up. The moonlit stones open their hidden steps, and a ghostly night merchant sometimes appears among them.</li>
       <li><b>Dawn and dusk:</b> the best light for Thalos to scout from the Windy lookout, and when certain travelers are on the road.</li>
     </ul>
 
     <h3>Secrets to come back for</h3>
-    <p>Each of these is visible from the start, so players notice it early and remember to come back.</p>
+    <p>Each of these is visible from the start, so players notice it early and remember to come back. The in-between areas have their own; see <a href="#wilds">Between the Regions</a>.</p>
     <div class="tbl"><table><thead><tr><th>Place</th><th>Needs</th><th>From</th><th>Reward</th></tr></thead><tbody>
-      <tr><td><a href="#wm-lookout">Windy lookout</a></td><td>Magnetic Gauntlet pulls the iron bridge down across the gorge</td><td>Chapter 6</td><td>Owl perch, Mystic Firefly #21</td></tr>
+      <tr><td><a href="#wm-lookout">Windy lookout</a></td><td>Magnetic Gauntlet pulls the iron bridge down across the ravine</td><td>Chapter 6</td><td>Owl perch, Mystic Firefly #21</td></tr>
       <tr><td><a href="#wm-lake">Mirror Lake</a></td><td>Seashell Necklace parts the lake to reach a sunken shrine</td><td>Chapter 7</td><td>Totem of Strength #13, Mystic Firefly #19</td></tr>
-      <tr><td><a href="#wm-redcliff">Red cliff</a></td><td>Sand Rod pillars up the soft sand slope</td><td>Chapter 9</td><td>Totem of Strength #14</td></tr>
       <tr><td><a href="#wm-stones">Moonlit stones</a></td><td>Night, or a Moonstone pool, reveals steps down to a hidden chamber</td><td>Anytime at night; Chapter 10 with the Moonstone</td><td>Mystic Firefly #20</td></tr>
     </tbody></table></div>
 
@@ -1517,6 +1524,87 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
   </div>
 </article>
 
+<!-- BETWEEN THE REGIONS -->
+<article class="page" data-page="wilds" data-title="Between the Regions">
+  <div class="phead" style="--t:var(--swamp)">
+    <div class="eyebrow">Atlas</div><h2>Between the Regions</h2>
+    <div class="pills"><span class="pill prop">Proposed</span><a class="pill wm-link" href="#worldmap">On the world map</a></div>
+    <p class="lede">The places Liora crosses to get from one region to the next. None of them is a village. Each one is terrain with a job: its own way of getting across, the first sight of the next region's enemies, and something to come back for once Liora has a later item.</p>
+  </div>
+  <div class="prose">
+    <h3>How Hatu fits together</h3>
+    <p>The Council Fields are still the heart, with the Council ruins in the middle. But the regions don't only connect through the fields. They also touch each other, so by the middle of the game the map is a web instead of a wheel, and there's almost always a second way to get somewhere.</p>
+    <ul>
+      <li><b>The river Silver ties the north together.</b> It starts at the glacier under the Polar Temple, comes down the Gorge, spreads out into the Reed Delta (and floods east into the Great Swamp), crosses the fields, and reaches the sea at Silverspring, where the last of it pours out of the cliff as the town's spring and waterfall.</li>
+      <li><b>The coast ties the west together.</b> The Shore runs south from Silverspring along the cliffs. With the Seashell Necklace, the sea floor is a road too: out to Selene's Island, and from there south to the desert's beach.</li>
+      <li><b>Eldergrove is where everything meets.</b> It sits in an upland valley where the mountain, the fields and the desert all come together. Three roads lead into it, the old road from the fields, the High Pass from Glaciora, and the Dry Canyon from the desert, and the Heart's black mist closes all three until Liora has the Sunstone. Players who find the mist early from any direction will recognize it when they see it again.</li>
+    </ul>
+    <div class="tbl"><table><thead><tr><th>Area</th><th>Between</th><th>Getting across</th><th>First seen here</th><th>Come back for</th></tr></thead><tbody>
+      <tr><td><a href="#wm-reeddelta">Reed Delta</a></td><td>Fields and the swamp; foot of the Gorge</td><td>Sinking stepping stones, and planks Thalos carries</td><td>Rovans</td><td>The raft home (after Ch. 4); a Mud Boots pocket</td></tr>
+      <tr><td><a href="#wm-gorge">The Gorge</a></td><td>Reed Delta and Emberwick</td><td>Marsh, gatehouse, a ledge trail beside waterfalls</td><td>Frigidu</td><td>Firefly #22 behind a frozen fall (Ice Picks)</td></tr>
+      <tr><td><a href="#wm-highpass">High Pass</a></td><td>Glaciora and Eldergrove</td><td>Wind on narrow ledges; shelters and snowdrifts for Thalos</td><td>The Tupilak's tracks</td><td>The back way into Eldergrove</td></tr>
+      <tr><td><a href="#wm-badlands">The Badlands</a></td><td>Fields and the desert</td><td>Branching canyons and dead ends in the heat haze</td><td>Dustros</td><td>Firefly #23 (Mirage Mask); Totem #14 (Sand Rod)</td></tr>
+      <tr><td><a href="#wm-drycanyon">Dry Canyon</a></td><td>Desert and Eldergrove</td><td>Following the dead riverbed upstream</td><td>Vorrik</td><td>Moon doorways at night; the fast way back to the robots</td></tr>
+      <tr><td><a href="#wm-shore">The Shore</a></td><td>Silverspring, Selene's Island, the desert's beach</td><td>Cliff paths, then the seabed with the necklace</td><td>Tidecrabs</td><td>The founders' wreck; the seabed road to the desert</td></tr>
+    </tbody></table></div>
+
+    <h3>The Reed Delta</h3>
+    <p>North of the Council ruins, the river Silver comes down out of the mountain and splits into dozens of shallow channels between islands of reeds. It's half land and half water, loud with frogs, and the light goes green under the willows. Every way to the swamp and the mountain starts here, and it's the first place in the game that isn't a straight road.</p>
+    <ul>
+      <li><b>Getting across.</b> The Rocklets laid lines of flat stepping stones across the channels long ago. They sink slowly under Liora's weight, so she has to keep moving, and a stone she stops on goes under and comes back up a few seconds later. Where a channel is too wide for stones, a plank lies on the far bank; send Thalos to carry it across and drop it into the notches. It's the first time Thalos carries something useful outside a tutorial.</li>
+      <li><b>Mother Firefly's tree</b> stands on the first bend of the river, where the road from the fields enters the delta. This is where Chapter 2 really starts.</li>
+      <li><b>Rovans</b> are seen here first, roosting in the dead willows and diving at Liora on the stepping stones, which is more dangerous than it sounds when the stone is sinking.</li>
+      <li><b>Two ways out.</b> East, the channels thicken into mud, and the boardwalk into the Great Swamp begins. North, the river comes down out of a canyon: the Gorge. Its foot is a grey quicksand marsh that stops anyone without the Mud Boots.</li>
+    </ul>
+    <div class="co tip" data-label="Come back for">After Chapter 4, the Rocklets moor a raft at the delta's west end. Step on and it rides the river all the way down to Silverspring's bay in one go, past the fields and under the old bridges, a one-way shortcut home. With the Mud Boots, a quicksand pocket on the delta's east side opens to a little island with something on it (a good spot for a Totem or a Firefly).</div>
+
+    <h3>The Gorge</h3>
+    <p>The river's canyon, climbing from the delta up into the snow. At the bottom it's green and loud, with the river crashing over rocks. Halfway up, the spray off the waterfalls has frozen on the walls. At the top, the canyon opens onto the shelf where Emberwick sits, and the blizzard closes in.</p>
+    <ul>
+      <li><b>The foot.</b> The quicksand marsh, crossed with the Mud Boots, and the old stone gatehouse past it, whose wind wheel only turns with Thalos's wing blast. The full scene is in <a href="#ch4">Chapter 4</a>.</li>
+      <li><b>The ledge trail.</b> A path cut into the canyon wall beside the river, climbing past three waterfalls. At one point the trail is broken; a dead tree leans out over the gap from above, and a wing blast knocks it down as a bridge.</li>
+      <li><b>Frigidu</b> show up partway up, where the snow starts. The first ones are on ice, so players learn the hard way that they rebuild their armor, and the bare rock patches along the trail teach the answer.</li>
+    </ul>
+    <div class="co tip" data-label="Come back for">One of the upper waterfalls is frozen solid into a wall of blue ice, with something glowing behind it. With the Ice Picks, climb the frozen fall to a ledge behind the water and a small cave: Mystic Firefly #22. Players see it on the way up in Chapter 4, before they have the picks.</div>
+
+    <h3>The High Pass</h3>
+    <p>The Frostmurians' old hunting road, running east from Glaciora along the mountain's shoulder above the treeline, and then down into the Eldergrove valley from above. Liora can see it from Glaciora's eastern gate in Chapter 5, ending in a black haze far below, but she can't use it yet.</p>
+    <ul>
+      <li><b>The broken bridge.</b> Just past the gate, an iron bridge over a crevasse has collapsed and hangs down the far side. The Frostmurians lost it years ago. After Chapter 6, the Magnetic Gauntlet pulls it back up and locks it.</li>
+      <li><b>The wind.</b> Gusts sweep the narrow ledges on a rhythm and shove Liora sideways. Thalos hovers in the rock shelters along the way and calls out when a gust is coming, and wing-blasts drifted snow off the path ahead.</li>
+      <li><b>The Tupilak.</b> Its tracks lead out onto the High Pass at night, so the side quest from Glaciora runs here.</li>
+      <li><b>The far end</b> drops into the dead forest above Eldergrove, and the Heart's mist closes it. With the Sunstone, it's a second way into Chapter 11, and afterward the fastest way between the mountain and Eldergrove.</li>
+    </ul>
+
+    <h3>The Badlands</h3>
+    <p>South of the fields, the grass gives out and the ground turns to red rock, cut into canyons by a dry riverbed. The river Silver used to reach this far, long ago, which is the first hint of how the land has changed. The canyons branch and dead-end, and a heat haze blurs the distance, so it's easy to walk a long way down the wrong one.</p>
+    <ul>
+      <li><b>Getting across.</b> Most forks dead-end within a minute. The real way is the one the dry riverbed follows; players who notice the smooth stones and old water marks on the canyon walls can always find it. At the far end, the sandstorm wraps the deep desert, and only Selene's map leads through it.</li>
+      <li><b>Dustros</b> are seen here first: one bursts out of the sand in a dead end, so players meet the grab-and-peck fight long before the desert.</li>
+      <li><b>The red cliff</b> stands over one of the canyons, too soft to climb.</li>
+    </ul>
+    <div class="co tip" data-label="Come back for">Through the Mirage Mask, one dead-end wall is fake. Behind it is a little shrine with Mystic Firefly #23. With the Sand Rod, pillars climb the red cliff to Totem of Strength #14.</div>
+
+    <h3>The Dry Canyon</h3>
+    <p>The same dry riverbed, followed upstream from the desert's northern edge. It climbs north-east toward Eldergrove, and the closer it gets, the greyer the walls and the deader the scrub. The top is closed by the Heart's mist.</p>
+    <ul>
+      <li><b>Getting across.</b> With the Sunstone, burn back the mist at the top the same way as on the old road. It's how players coming straight from the Desert Temple in Chapter 10 can reach Eldergrove without going back to the fields.</li>
+      <li><b>Vorrik</b> are seen here first, outside Eldergrove: a few skeletons in the riverbed near the top, where the Heart's leak has reached.</li>
+      <li><b>Moon doorways.</b> The canyon walls have old priests' carvings that only open inside a pool of night, leading to small caves. Good homes for later collectibles.</li>
+    </ul>
+
+    <h3>The Shore</h3>
+    <p>The coast south of Silverspring: cliff paths, coves and little beaches, with the sea crashing on rocks below. A rocky point a few minutes south of town is where the strait crossing to Selene's Island starts.</p>
+    <ul>
+      <li><b>Tidecrabs</b> live on the beaches and come out of the surf at low tide. They're too heavy for Thalos to flip until he has Talon Grip, so early on they're something to roll around.</li>
+      <li><b>The seabed road.</b> With the Seashell Necklace, the sea floor is a road. From Selene's Island, walk south along the bottom past the founders' wreck and old cargo, and come ashore on the desert's beach, below the dunes. It's a second way into Chapter 9; the sandstorm still wraps the deep desert from that side, so Selene's map is still needed.</li>
+    </ul>
+    <div class="co tip" data-label="Come back for">The founders' wreck lies just off the coast, only reachable with the water parted. A good home for lore and a later collectible.</div>
+
+    <div class="co open" data-label="Open question"><span class="open-q">What else lives in the in-between areas?</span> Each one has a first-seen enemy and one secret. They could also each hold one small side character: a Rocklet ferryman in the delta, a Frostmurian hunter on the High Pass, a lost robot in the Badlands, a beachcomber on the Shore.</div>
+  </div>
+</article>
+
 <!-- FIREFLIES -->
 <article class="page wide" data-page="fireflies" data-title="Mystic Fireflies">
   <div class="phead" style="--t:var(--firefly)">
@@ -1528,11 +1616,11 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
     <tr><td class="num">10</td><td>Fireflies are drawn in from farther away</td><td>Ch. 8, Selene's Island</td></tr>
     <tr><td class="num">15</td><td>Liora's stamina increases</td><td>Ch. 10, Desert Temple</td></tr>
     <tr><td class="num">20</td><td>Liora slowly heals while holding the lantern</td><td>Possible after Chapter 10, with the Council Fields fireflies</td></tr>
-    <tr><td class="num">25</td><td>A burst of fireflies damages enemies, then the healing lantern</td><td>Needs the last 4 open slots placed</td></tr>
+    <tr><td class="num">25</td><td>A burst of fireflies damages enemies, then the healing lantern</td><td>Needs the last 2 open slots placed</td></tr>
   </tbody></table></div>
   <div class="legend-row"><span class="pill ok">Placed</span> in a mapped temple <span class="pill prop">Proposed</span> suggested spot <span class="pill slot">Open</span> still needs a home</div>
   <div class="tbl"><table><thead><tr><th>#</th><th>Location</th><th>Chapter</th><th>Status</th></tr></thead><tbody id="ffBody"></tbody></table></div>
-  <div class="co open" data-label="Open question"><span class="open-q">Where do fireflies #22–25 go?</span> Good candidates are places players come back to with new items: the homestead, Bell Isle, the Tupilak's lair, swamp areas only reachable in Mud Boots, and Glaciora's ice walls after the Magnetic Gauntlet.</div>
+  <div class="co open" data-label="Open question"><span class="open-q">Where do fireflies #24–25 go?</span> Good candidates are places players come back to with new items: the Mud Boots pocket in the Reed Delta, a moon doorway in the Dry Canyon, the homestead, Bell Isle, the Tupilak's lair on the High Pass, and Glaciora's ice walls after the Magnetic Gauntlet.</div>
 </article>
 
 <!-- TOTEMS -->
@@ -1697,7 +1785,7 @@ const FIREFLIES = [
   ["Hot spring cave behind Glaciora","5","prop"],
   ["Slide Gallery, Polar Temple","6","ok"],
   ["Secret basement in Liora's house","7","prop"],
-  ["Tide pools in the parted bay","7","prop"],
+  ["Sea cave under the temple, with the bay parted","7","prop"],
   ["Lamp room of Selene's lighthouse","8","prop"],
   ["Robot village garden dome","9","prop"],
   ["Mirage oasis in the dunes","9","prop"],
@@ -1707,7 +1795,9 @@ const FIREFLIES = [
   ["Spirit Ferry, Eldergrove Temple","12","ok"],
   ["Mirror Lake, in the sunken shrine","Council Fields","prop"],
   ["Hidden chamber under the moonlit stones","Council Fields","prop"],
-  ["Windy lookout, across the gorge","Council Fields","prop"]
+  ["Windy lookout, across the ravine","Council Fields","prop"],
+  ["Behind the frozen waterfall in the Gorge (Ice Picks)","Gorge","prop"],
+  ["Hidden shrine behind a fake wall in the Badlands (Mirage Mask)","Badlands","prop"]
 ];
 // Map the fireflies above into the walkthrough's chapter callouts.
 // Chapter callouts were written with matching numbers; temple callouts are generated.
@@ -2833,60 +2923,90 @@ document.querySelectorAll(".page[data-temple]").forEach(ch => { window.M3MAPS[ch
 // ===== World map of Hatu =====
 const WORLD = {
  places:[
+  {id:"wm-reeddelta", n:"Reed Delta", kind:"area", x:478, y:374, ch:[2,7], c:"--swamp", lab:"c",
+   zone:"M398 352 C428 334 520 336 538 362 C550 388 522 420 472 426 C432 431 398 422 394 396 C391 376 391 360 398 352 Z",
+   about:"Where the river Silver comes down out of the mountain and spreads into a maze of reed channels before it reaches the fields. Half land, half water. Every path to the swamp and the mountain starts here.",
+   here:["Mother Firefly's tree, on the first bend of the river","Sinking Rocklet stepping stones, and planks Thalos carries to bridge the wide channels","Rovans, first seen","The Rocklets' raft (after Chapter 4): ride it down the river to Silverspring","A Mud Boots pocket in the reeds (Totem or Firefly, to place)"],
+   reach:"North from the Council ruins along the river. Open from the start."},
+  {id:"wm-gorge", n:"The Gorge", kind:"area", x:446, y:290, ch:[4,7], c:"--ice", lab:"cl",
+   zone:"M456 352 C446 320 450 270 462 232 C468 214 494 212 500 230 C508 262 496 322 486 352 Z",
+   about:"The river's canyon, climbing from the Reed Delta to the snow. A quicksand marsh and an old gatehouse guard its foot. Above them, a ledge trail climbs beside waterfalls whose spray freezes higher up.",
+   here:["Quicksand marsh (Mud Boots) and the wind-wheel gatehouse (Gale Wings)","A dead tree Thalos wing-blasts down to bridge a gap","Frigidu, first seen","A frozen waterfall with a cave behind it: Mystic Firefly #22 (Ice Picks)"],
+   reach:"North out of the Reed Delta, after Chapter 3."},
+  {id:"wm-highpass", n:"High Pass", kind:"area", x:690, y:196, ch:[11], c:"--ice", lab:"c",
+   zone:"M598 108 C660 118 732 168 792 248 C806 274 816 310 806 330 C792 336 778 318 770 298 C730 230 660 172 594 140 Z",
+   about:"The Frostmurians' old hunting road, above the treeline along the mountain's eastern shoulder, down into Eldergrove from above. Wind shoves Liora on the narrow ledges.",
+   here:["A collapsed iron bridge the Magnetic Gauntlet pulls back up","Wind shelters Thalos hovers in, and snowdrifts he wing-blasts off the path","The Tupilak's tracks lead here at night","Ends in the Heart's black mist above Eldergrove"],
+   reach:"East from Glaciora. The Gauntlet bridge needs Chapter 6; the mist at the far end needs the Sunstone."},
+  {id:"wm-badlands", n:"The Badlands", kind:"area", x:478, y:566, ch:[9], c:"--sand", lab:"c",
+   zone:"M372 540 C412 526 522 526 566 545 C582 566 560 600 520 606 C470 612 410 610 380 596 C362 582 360 552 372 540 Z",
+   about:"Red rock canyons south of the fields, cut by a dry riverbed that shows the river once reached this far. The canyons branch and dead-end, and the heat haze hides which fork is real. The sandstorm waits at the far end.",
+   here:["Branching canyons and dead ends; the haze hides the real fork","Dustros, first seen","Fake rock walls that hide a shrine: Mystic Firefly #23 (Mirage Mask)","The red cliff: Totem of Strength #14 (Sand Rod)"],
+   reach:"South from the Council ruins. Open from the start, but the sandstorm at the far end needs Selene's map."},
+  {id:"wm-drycanyon", n:"Dry Canyon", kind:"area", x:756, y:566, ch:[11], c:"--grave", lab:"cr",
+   zone:"M640 642 C680 612 720 560 760 470 C770 444 790 430 806 440 C816 452 802 480 790 500 C760 570 716 626 666 660 Z",
+   about:"The old riverbed, followed upstream from the desert's northern edge into dead country. The walls get greyer and the trees die the closer it gets to Eldergrove.",
+   here:["Vorrik skeletons, first seen outside Eldergrove","Moon doorways in the canyon walls that open at night","Ends in the Heart's black mist below Eldergrove","After Chapter 11, the fastest way back to the robots"],
+   reach:"North-east from the Desert Temple. The mist at the top needs the Sunstone."},
+  {id:"wm-shore", n:"The Shore", kind:"area", x:306, y:628, ch:[8], c:"--ice", lab:"cr",
+   zone:"M286 440 C302 470 302 520 292 560 C286 590 300 616 330 640 C346 652 362 642 352 626 C330 600 322 570 330 535 C338 500 330 466 310 440 Z",
+   about:"The coast south of Silverspring: cliffs and coves, a rocky point where the strait to Selene's Island begins, and a long seabed walk south to the desert's beach.",
+   here:["Tidecrabs on the beaches","The rocky point where the strait crossing starts","With the necklace, the seabed road south from Selene's Island to the desert's beach","The founders' wreck, just offshore"],
+   reach:"South along the cliffs from Silverspring. The seabed needs the Seashell Necklace."},
   {id:"wm-silverspring", n:"Silverspring", kind:"town", x:292, y:418, ch:[1,7], c:"--accent", lab:"l",
-   about:"The fishing village where the game begins, built in three tiers up a sea cliff: docks at the water, the market and the domed temple on a shelf halfway up, with the spring falling off the edge as a waterfall, and the Elder's house, training yard and watchtower on the clifftop. The founders built it where their ship wrecked on the cliffs.",
+   about:"The fishing village where the game begins, built in three tiers up a sea cliff at the mouth of the river Silver: docks at the water, the market and the domed temple on a shelf halfway up, with the spring falling off the edge as a waterfall, and the Elder's house, training yard and watchtower on the clifftop.",
    here:["Sword and Falconry Glove (Chapter 1)","Seashell Necklace in Liora's secret basement (Chapter 7, needs the Magnetic Gauntlet)","Totem of Strength #1 from Locked Out","Mystic Fireflies #10 and #11 (basement, sea cave under the temple)","Come back for: the sea cave (necklace), the fallen rope bridge to the watchtower (Chapter 7), the founders' wreck past the point"],
-   reach:"Start of the game. The east gate opens onto the Council Fields, where every road begins. The sea routes need the Seashell Necklace."},
-  {id:"wm-council", n:"Council ruins", kind:"ruin", x:410, y:500, ch:[], c:"--accent", lab:"b",
+   reach:"Start of the game. The east gate opens onto the Council Fields; the Shore runs south along the cliffs."},
+  {id:"wm-council", n:"Council ruins", kind:"ruin", x:420, y:478, ch:[], c:"--accent", lab:"b",
    about:"The broken hall at the heart of the Council Fields, where Hatu's peoples once met as the Council of Guardians. The roof is long gone, but stone seats for the Rocklets, the Frostmurians, Silverspring and the robots still stand in a ring.",
    here:["Owl perch at the center: the first fast-travel point","A traveling merchant camps here between chapters","Late in the game, the Council meets here again (proposed)"],
-   reach:"Through Silverspring's east gate. Every road out of the fields starts here."},
-  {id:"wm-lake", n:"Mirror Lake", kind:"spot", x:338, y:550, ch:[], c:"--ice", lab:"l", opt:true,
+   reach:"Through Silverspring's east gate. The Reed Delta, the Badlands and the old road all leave from here."},
+  {id:"wm-lake", n:"Mirror Lake", kind:"spot", x:364, y:502, ch:[], c:"--ice", lab:"l", opt:true,
    about:"A still lake in the fields with something drowned at the bottom.",
    here:["Sunken shrine: Totem of Strength #13","Mystic Firefly #19"],
    reach:"Come back with the Seashell Necklace (after Chapter 7) to part the water."},
-  {id:"wm-stones", n:"Moonlit stones", kind:"spot", x:466, y:470, ch:[], c:"--grave", lab:"r", opt:true,
+  {id:"wm-stones", n:"Moonlit stones", kind:"spot", x:480, y:498, ch:[], c:"--grave", lab:"r", opt:true,
    about:"A ring of standing stones. By day they're just stones. At night, or inside a Moonstone pool, carved steps appear between them, leading down to a hidden chamber.",
    here:["Mystic Firefly #20","A ghostly night merchant (proposed)"],
    reach:"Come back at night, or with the Moonstone (after Chapter 10)."},
-  {id:"wm-lookout", n:"Windy lookout", kind:"spot", x:630, y:532, ch:[], c:"--ice", lab:"r", opt:true,
-   about:"A high plateau across a gorge, with a view over most of Hatu.",
+  {id:"wm-lookout", n:"Windy lookout", kind:"spot", x:652, y:520, ch:[], c:"--ice", lab:"r", opt:true,
+   about:"A high plateau across a ravine at the fields' eastern edge, with a view over most of Hatu.",
    here:["Owl perch","Mystic Firefly #21","Thalos can scout the whole field from here"],
-   reach:"Pull the iron bridge down across the gorge with the Magnetic Gauntlet (after Chapter 6)."},
-  {id:"wm-redcliff", n:"Red cliff", kind:"spot", x:370, y:614, ch:[], c:"--sand", lab:"l", opt:true,
-   about:"A sandstone cliff at the edge of the badlands, too soft to climb.",
+   reach:"Pull the iron bridge down across the ravine with the Magnetic Gauntlet (after Chapter 6)."},
+  {id:"wm-redcliff", n:"Red cliff", kind:"spot", x:398, y:590, ch:[], c:"--sand", lab:"l", opt:true,
+   about:"A sandstone cliff in the Badlands, too soft to climb.",
    here:["Totem of Strength #14 at the top"],
    reach:"Raise Sand Rod pillars up the slope (after Chapter 9)."},
-  {id:"wm-mother", n:"Mother Firefly's tree", kind:"spot", x:392, y:404, ch:[2], c:"--swamp", lab:"t",
-   about:"A giant cypress glowing from inside, at the swamp's edge. Mother Firefly lives in its hollow and upgrades the Firefly Lantern for every five children returned.",
+  {id:"wm-mother", n:"Mother Firefly's tree", kind:"spot", x:418, y:408, ch:[2], c:"--swamp", lab:"b",
+   about:"A giant cypress glowing from inside, on the first bend of the river in the Reed Delta. Mother Firefly lives in its hollow and upgrades the Firefly Lantern for every five children returned.",
    here:["Firefly Lantern","Mystic Firefly #1","Side quest: Mother Firefly's Reunion"],
-   reach:"Along the swamp road, northeast of the Council Fields."},
-  {id:"wm-swamp", n:"Great Swamp", kind:"spot", x:466, y:398, ch:[2], c:"--swamp", lab:"b",
-   about:"Boardwalks over deep mud and quicksand. Before the Mud Boots, the quicksand pits are walls. Afterward they open shortcuts and hidden pockets.",
+   reach:"North from the Council ruins, where the river road enters the Reed Delta."},
+  {id:"wm-swamp", n:"Great Swamp", kind:"spot", x:570, y:356, ch:[2], c:"--swamp", lab:"b",
+   about:"Where the river floods out east of the delta: boardwalks over deep mud and quicksand. Before the Mud Boots, the quicksand pits are walls. Afterward they open shortcuts and hidden pockets.",
    here:["The hanging bean pod (Totem #2, Firefly #2)","Map piece from the snail cartographer","Rovans and Mirelings"],
-   reach:"Open from Silverspring. Quicksand pockets need the Mud Boots."},
-  {id:"wm-rocklets", n:"Rocklet village", kind:"town", x:530, y:356, ch:[2], c:"--swamp", lab:"l",
+   reach:"East through the Reed Delta. Quicksand pockets need the Mud Boots."},
+  {id:"wm-rocklets", n:"Rocklet village", kind:"town", x:604, y:326, ch:[2], c:"--swamp", lab:"r",
    about:"Mossy boulders that are really homes. The Rocklets keep the Temple of Reedtona and only let Liora in once she drives the Rovans off their sacred stone.",
    here:["Rovan Alpha fight","Mystic Firefly #3 in a hollow stump","A joke for Say Another One, from the Rocklet elder"],
    reach:"The north boardwalk from the swamp."},
-  {id:"wm-reedtona", n:"Temple of Reedtona", kind:"temple", x:582, y:326, ch:[3], c:"--swamp", lab:"r",
-   about:"A temple built inside and around a gigantic swamp tree. Its piece of Thalos is already gone when Liora arrives.",
+  {id:"wm-reedtona", n:"Temple of Reedtona", kind:"temple", x:648, y:288, ch:[3], c:"--swamp", lab:"r",
+   about:"A temple built inside and around a gigantic swamp tree, the tallest thing in the swamp. Varyon takes its piece of Thalos while Liora is inside.",
    here:["Mud Boots, from the Gloomhorn","Mystic Firefly #4, Totem of Strength #3","Boss: Bog Guardian. Enchanted Scroll: Gale Wings","Great Totem of Strength (+1 heart) from the boss"],
    reach:"Across the moat on a bridge of Rocklets, once Liora has helped them."},
-  {id:"wm-emberwick", n:"Emberwick", kind:"town", x:556, y:218, ch:[4], c:"--ice", lab:"l",
-   about:"Three houses and a great stone lantern, trapped inside a blizzard. Every road out loops back into town until the lantern burns again.",
+  {id:"wm-emberwick", n:"Emberwick", kind:"town", x:482, y:206, ch:[4], c:"--ice", lab:"l",
+   about:"Three houses and a great stone lantern on a shelf above the Gorge, trapped inside a blizzard. Every road out loops back into town until the lantern burns again.",
    here:["Ice Picks and Mystic Firefly #5, in the cave camp","The Abura-sumashi, the lamp-maker, the trapper and the innkeeper","The way-house, a place to rest"],
-   reach:"Up the mountain trail north from the Council Fields. The quicksand marsh at its foot needs the Mud Boots, the gatehouse past it needs Thalos's wing blast, and leaving Emberwick needs the great lantern relit."},
-  {id:"wm-homestead", n:"The homestead", kind:"spot", x:624, y:204, ch:[4], c:"--ice", lab:"r",
+   reach:"At the top of the Gorge. Leaving Emberwick needs the great lantern relit."},
+  {id:"wm-homestead", n:"The homestead", kind:"spot", x:410, y:176, ch:[4], c:"--ice", lab:"l",
    about:"A lonely cabin in a snowy clearing, where a man lives alone after a hard winter.",
    here:["Side quest: The Homestead (Totem of Strength #4)"],
-   reach:"A side path off the trail above Emberwick. The cliff roses need the Ice Picks."},
-  {id:"wm-glaciora", n:"Glaciora", kind:"town", x:660, y:138, ch:[5], c:"--ice", lab:"l",
-   about:"The Frostmurians' village, carved into a cliff and linked by rope bridges.",
+   reach:"A side path west off the trail above Emberwick. The cliff roses need the Ice Picks."},
+  {id:"wm-glaciora", n:"Glaciora", kind:"town", x:542, y:132, ch:[5], c:"--ice", lab:"r",
+   about:"The Frostmurians' village, carved into a cliff above the glacier and linked by rope bridges. The High Pass leaves from its eastern gate.",
    here:["Feats of Glaciora (Totem of Strength #5)","Mystic Fireflies #6 to #8","Side quests: Say Another One, The Tupilak"],
    reach:"Climb the ice walls above Emberwick with the Ice Picks."},
-  {id:"wm-polar", n:"Polar Temple", kind:"temple", x:724, y:92, ch:[6], c:"--ice", lab:"r",
-   about:"Carved into the peak by the Frostmurians' ancestors. Varyon takes its piece of Thalos here.",
+  {id:"wm-polar", n:"Polar Temple", kind:"temple", x:596, y:70, ch:[6], c:"--ice", lab:"r",
+   about:"Carved into the peak by the Frostmurians' ancestors, above the glacier where the river Silver begins. Varyon takes its piece of Thalos here.",
    here:["Magnetic Gauntlet","Mystic Firefly #9, Totem of Strength #6","Boss: Kolvagar. Enchanted Scroll: Talon Grip","Great Totem of Strength (+1 heart) from the boss"],
    reach:"Behind the chieftain's hall, once Liora passes the feats."},
   {id:"wm-wreck", n:"Founders' wreck", kind:"spot", x:226, y:452, ch:[7], c:"--accent", lab:"l",
@@ -2896,28 +3016,28 @@ const WORLD = {
   {id:"wm-selene", n:"Selene's Island", kind:"island", x:150, y:486, ch:[8], c:"--ice", lab:"b",
    about:"Selene's lighthouse, and the house where her descendant Maro lives.",
    here:["Mirage Mask","Mystic Firefly #12, in the lamp room"],
-   reach:"Walk the strait on the sea floor with the Seashell Necklace."},
+   reach:"Walk the strait on the sea floor from the rocky point on the Shore, with the Seashell Necklace."},
   {id:"wm-bellisle", n:"Bell Isle", kind:"island", x:84, y:584, ch:[8], c:"--ice", lab:"r", opt:true,
    about:"A drowned bell tower, further out to sea.",
    here:["Totem of Strength #7, in the risen shrine"],
    reach:"Seashell Necklace. Optional."},
-  {id:"wm-robots", n:"Hidden robot village", kind:"town", x:520, y:604, ch:[9], c:"--sand", lab:"b",
+  {id:"wm-robots", n:"Hidden robot village", kind:"town", x:500, y:640, ch:[9], c:"--sand", lab:"b",
    about:"An underground town built from the robots' crashed ship, hidden under a cloaking field.",
    here:["Sand Rod","Mystic Firefly #13","Map piece at the broken-tooth rock"],
-   reach:"The south road from the Council Fields, through the badlands and the sandstorm, which only Selene's map leads through. The village is only visible through the Mirage Mask."},
-  {id:"wm-oasis", n:"Mirage oasis", kind:"spot", x:446, y:640, ch:[9], c:"--sand", lab:"l", opt:true,
+   reach:"Through the Badlands and the sandstorm, which only Selene's map leads through, or up from the desert's beach along the Shore's seabed road. The village is only visible through the Mirage Mask."},
+  {id:"wm-oasis", n:"Mirage oasis", kind:"spot", x:432, y:652, ch:[9], c:"--sand", lab:"l", opt:true,
    about:"An oasis in the dunes that only exists through the Mirage Mask.",
    here:["Mystic Firefly #14"],
    reach:"West of the robot village. Mirage Mask."},
-  {id:"wm-deserttemple", n:"Desert Temple", kind:"temple", x:626, y:616, ch:[10], c:"--sand", lab:"r",
+  {id:"wm-deserttemple", n:"Desert Temple", kind:"temple", x:612, y:650, ch:[10], c:"--sand", lab:"r",
    about:"A buried tomb in the biggest dune. For once, its piece of Thalos is still waiting.",
    here:["Sunstone & Moonstone","Mystic Firefly #15, Totem of Strength #8","Boss: The Hollow Pharaoh. Piece of Thalos. Enchanted Scroll: Resonant Strike","Great Totem of Strength (+1 heart) from the boss"],
    reach:"Mud Boots for the quicksand, the Sand Rod to climb the dune, and the Mirage Mask to find the real door."},
-  {id:"wm-eldergrove", n:"Ruins of Eldergrove", kind:"town", x:778, y:430, ch:[11], c:"--grave", lab:"b",
-   about:"A town crushed by the Obsidian Heart's power. The forest around it has died, and it's always nearly night.",
+  {id:"wm-eldergrove", n:"Ruins of Eldergrove", kind:"town", x:808, y:396, ch:[11], c:"--grave", lab:"b",
+   about:"A town crushed by the Obsidian Heart's power, in an upland valley where the mountain, the fields and the desert all meet. The forest around it has died, and it's always nearly night.",
    here:["Mystic Fireflies #16 and #17","Map piece on the old road","The graveyard epitaphs, which hold the Bell Tower's answer"],
-   reach:"The old road east from the Council Fields, through the Heart's black mist. Only daylight from the Sunstone burns a way through."},
-  {id:"wm-eldertemple", n:"Eldergrove Temple", kind:"temple", x:826, y:392, ch:[12], c:"--grave", lab:"r",
+   reach:"Three ways in: the old road east from the Council Fields, the High Pass down from Glaciora, and the Dry Canyon up from the desert. All three end in the Heart's black mist, which only Sunstone daylight burns through."},
+  {id:"wm-eldertemple", n:"Eldergrove Temple", kind:"temple", x:850, y:356, ch:[12], c:"--grave", lab:"r",
    about:"A black-stone church that rises out of the ground when the eclipse spreads over the ruins.",
    here:["Spectral Chain","Totem of Strength #9, Mystic Firefly #18","Boss: The Hollow Archpriest. Varyon takes the Obsidian Heart","Great Totem of Strength (+1 heart) from the boss"],
    reach:"Overlap the Sunstone and Moonstone pools over the shrine in the ruins."},
@@ -2926,32 +3046,37 @@ const WORLD = {
    here:["The Mob Rush arenas","Final boss: Varyon"],
    reach:"Hidden in a storm until Varyon takes the Obsidian Heart. Then walk the deepest sea floor with the Seashell Necklace."}
  ],
- // routes: d = SVG path, sea = crossing the sea floor, gates = [[t along path, badge, label, kind]]
+ // routes: d = SVG path, sea = crossing the sea floor, raft = riding the river, gates = [[t along path, badge, label, kind]]
  routes:[
-  {d:"M292 418 Q348 452 410 500", n:"East gate road"},
-  {d:"M410 500 Q398 450 392 404", n:"Swamp road"},
-  {d:"M392 404 Q430 402 466 398", n:"Swamp road"},
-  {d:"M466 398 Q500 384 530 356", n:"North boardwalk"},
-  {d:"M530 356 Q558 344 582 326", n:"Rocklet bridge", gates:[[.5,"!","Help the Rocklets, and they form a bridge","event"]]},
-  {d:"M410 500 Q432 420 440 340 Q452 262 556 218", n:"Mountain trail", gates:[[.16,"MB","Quicksand marsh at the foot of the trail: Mud Boots","item"],[.26,"GW","Gatehouse with a still wind wheel: Thalos's wing blast (Gale Wings)","item"],[.84,"!","The blizzard closes around Emberwick","event"]]},
-  {d:"M556 218 Q596 176 660 138", n:"Ice walls", gates:[[.25,"!","Relight Emberwick's great lantern to leave","event"],[.68,"IP","Ice Picks to climb the ice walls","item"]]},
-  {d:"M598 178 Q614 196 624 204", n:"Side path", opt:true},
-  {d:"M660 138 Q696 118 724 92", n:"Peak path", gates:[[.5,"!","Pass the Feats of Glaciora","event"]]},
-  {d:"M270 436 Q212 470 150 486", n:"The strait", sea:true, gates:[[.5,"SN","Seashell Necklace: walk the sea floor","item"]]},
+  {d:"M292 418 Q352 446 420 478", n:"East gate road"},
+  {d:"M420 478 Q414 444 418 408", n:"River road"},
+  {d:"M418 408 Q492 392 570 356", n:"Through the Reed Delta"},
+  {d:"M570 356 Q590 344 604 326", n:"North boardwalk"},
+  {d:"M604 326 Q628 310 648 288", n:"Rocklet bridge", gates:[[.5,"!","Help the Rocklets, and they form a bridge","event"]]},
+  {d:"M440 392 Q462 360 470 330 Q478 290 476 250 Q478 226 482 206", n:"Gorge trail", gates:[[.16,"MB","Quicksand marsh at the foot of the Gorge: Mud Boots","item"],[.3,"GW","Gatehouse with a still wind wheel: Thalos's wing blast (Gale Wings)","item"],[.86,"!","The blizzard closes around Emberwick","event"]]},
+  {d:"M482 206 Q512 172 542 132", n:"Ice walls", gates:[[.3,"!","Relight Emberwick's great lantern to leave","event"],[.7,"IP","Ice Picks to climb the ice walls","item"]]},
+  {d:"M482 206 Q446 186 410 176", n:"Side path", opt:true},
+  {d:"M542 132 Q572 104 596 70", n:"Peak path", gates:[[.5,"!","Pass the Feats of Glaciora","event"]]},
+  {d:"M542 132 Q640 140 720 210 Q780 268 808 396", n:"High Pass", gates:[[.22,"MG","Collapsed iron bridge: Magnetic Gauntlet","item"],[.9,"SUN","The Heart's black mist: Sunstone daylight","item"]]},
+  {d:"M418 408 Q360 416 300 420", n:"Raft down the river", raft:true, gates:[[.5,"↓","After Chapter 4, the Rocklets' raft rides the river home","event"]]},
+  {d:"M292 418 Q300 470 300 524", n:"Shore path"},
+  {d:"M300 524 Q228 512 150 486", n:"The strait", sea:true, gates:[[.5,"SN","Seashell Necklace: walk the sea floor","item"]]},
   {d:"M150 486 Q108 532 84 584", n:"Out to Bell Isle", sea:true, opt:true, gates:[[.5,"SN","Seashell Necklace","item"]]},
+  {d:"M150 486 Q230 640 360 648 Q430 650 500 640", n:"Seabed road south", sea:true, gates:[[.42,"SN","Seashell Necklace: the seabed road to the desert's beach","item"]]},
   {d:"M272 428 Q248 440 226 452", n:"Down to the wreck", sea:true, opt:true},
-  {d:"M410 500 Q430 560 470 585 Q500 598 520 604", n:"South road", gates:[[.62,"MAP","Sandstorm: only Selene's map leads through","item"],[.9,"MM","Mirage Mask: the village is cloaked","item"]]},
-  {d:"M520 604 Q576 600 626 616", n:"Into the dunes", gates:[[.35,"MB","Mud Boots for the quicksand","item"],[.72,"SR","Sand Rod to climb the dune","item"]]},
-  {d:"M520 604 Q484 626 446 640", n:"Dune track", opt:true, gates:[[.55,"MM","Mirage Mask","item"]]},
-  {d:"M410 500 Q600 470 778 430", n:"The old road", gates:[[.62,"SUN","The Heart's black mist: burn a path with Sunstone daylight","item"]]},
-  {d:"M778 430 Q800 410 826 392", n:"The shrine", gates:[[.5,"SM","An eclipse over the shrine reveals the temple","item"]]},
-  {d:"M262 400 Q168 300 98 236", n:"The deep", sea:true, gates:[[.42,"SN","Seashell Necklace through the deepest water","item"],[.72,"\u2605","Hidden in a storm until Varyon takes the Obsidian Heart","story"]]},
-  {d:"M404 506 Q368 522 338 550", n:"Lake path", opt:true, gates:[[.78,"SN","Seashell Necklace parts Mirror Lake","item"]]},
-  {d:"M410 500 Q442 482 466 470", n:"Stone circle", opt:true, gates:[[.62,"\u263e","Only at night, or inside a Moonstone pool","event"]]},
-  {d:"M541 478 Q592 494 630 532", n:"Gorge bridge", opt:true, gates:[[.42,"MG","Magnetic Gauntlet pulls the iron bridge down","item"]]},
-  {d:"M429 542 Q396 584 370 614", n:"Red cliff path", opt:true, gates:[[.62,"SR","Sand Rod pillars up the sand slope","item"]]}
+  {d:"M420 478 Q448 548 476 600 Q490 624 500 640", n:"Through the Badlands", gates:[[.8,"MAP","Sandstorm: only Selene's map leads through","item"],[.96,"MM","Mirage Mask: the village is cloaked","item"]]},
+  {d:"M500 640 Q556 640 612 650", n:"Into the dunes", gates:[[.35,"MB","Mud Boots for the quicksand","item"],[.72,"SR","Sand Rod to climb the dune","item"]]},
+  {d:"M500 640 Q466 648 432 652", n:"Dune track", opt:true, gates:[[.55,"MM","Mirage Mask","item"]]},
+  {d:"M612 650 Q700 600 760 500 Q790 446 808 396", n:"Dry Canyon", gates:[[.86,"SUN","The Heart's black mist: Sunstone daylight","item"]]},
+  {d:"M420 478 Q620 452 808 396", n:"The old road", gates:[[.74,"SUN","The Heart's black mist: Sunstone daylight","item"]]},
+  {d:"M808 396 Q830 378 850 356", n:"The shrine", gates:[[.5,"SM","An eclipse over the shrine reveals the temple","item"]]},
+  {d:"M262 400 Q168 300 98 236", n:"The deep", sea:true, gates:[[.42,"SN","Seashell Necklace through the deepest water","item"],[.72,"★","Hidden in a storm until Varyon takes the Obsidian Heart","story"]]},
+  {d:"M414 484 Q386 490 364 502", n:"Lake path", opt:true, gates:[[.7,"SN","Seashell Necklace parts Mirror Lake","item"]]},
+  {d:"M420 478 Q452 484 480 498", n:"Stone circle", opt:true, gates:[[.62,"☾","Only at night, or inside a Moonstone pool","event"]]},
+  {d:"M566 466 Q614 486 652 520", n:"Ravine bridge", opt:true, gates:[[.5,"MG","Magnetic Gauntlet pulls the iron bridge down","item"]]},
+  {d:"M446 548 Q420 570 398 590", n:"Red cliff path", opt:true, gates:[[.62,"SR","Sand Rod pillars up the sand slope","item"]]}
  ],
- perches:[[426,486,"Council ruins"],[304,400,"Silverspring"],[548,370,"Rocklet village"],[678,152,"Glaciora"],[546,590,"Outside the robot village"],[706,446,"The old road"],[168,470,"Selene's Island"],[646,516,"Windy lookout"]],
+ perches:[[432,470,"Council ruins"],[304,400,"Silverspring"],[616,318,"Rocklet village"],[556,124,"Glaciora"],[514,632,"Outside the robot village"],[724,428,"The old road"],[168,470,"Selene's Island"],[664,512,"Windy lookout"],[430,400,"Mother Firefly's tree"]],
  story:["wm-silverspring","wm-swamp","wm-reedtona","wm-emberwick","wm-glaciora","wm-polar","wm-silverspring","wm-selene","wm-robots","wm-deserttemple","wm-eldergrove","wm-eldertemple","wm-fortress"],
  chapterPlace:{1:"wm-silverspring",2:"wm-swamp",3:"wm-reedtona",4:"wm-emberwick",5:"wm-glaciora",6:"wm-polar",7:"wm-silverspring",8:"wm-selene",9:"wm-robots",10:"wm-deserttemple",11:"wm-eldergrove",12:"wm-eldertemple",13:"wm-fortress"}
 };
@@ -2972,23 +3097,26 @@ const WORLD = {
     {d:"M80 230 C82 216 108 212 116 226 C124 240 114 256 98 256 C84 256 78 244 80 230 Z", dark:true}
   ];
   const regions = [
-    {n:"The Council Fields", x:470, y:545, c:"--accent", small:true},
-    {n:"The Great Swamp", x:486, y:440, c:"--swamp"},
-    {n:"The Snowy Mountain", x:770, y:238, c:"--ice"},
-    {n:"The Desert", x:560, y:665, c:"--sand"},
-    {n:"Eldergrove", x:830, y:482, c:"--grave"}
+    {n:"The Council Fields", x:578, y:482, c:"--accent", small:true},
+    {n:"The Great Swamp", x:588, y:250, c:"--swamp", small:true},
+    {n:"The Snowy Mountain", x:440, y:44, c:"--ice"},
+    {n:"The Desert", x:610, y:690, c:"--sand"},
+    {n:"Eldergrove", x:880, y:452, c:"--grave"}
   ];
   const fields = [
-    {cx:470, cy:385, rx:120, ry:78, g:"reed", n:70, c:"--swamp"},
-    {cx:640, cy:150, rx:190, ry:110, g:"peak", n:46, c:"--ice"},
-    {cx:552, cy:606, rx:170, ry:66, g:"dune", n:46, c:"--sand"},
-    {cx:440, cy:540, rx:70, ry:30, g:"rock", n:12, c:"--sand"},
-    {cx:800, cy:420, rx:120, ry:92, g:"dead", n:46, c:"--grave"},
-    {cx:350, cy:350, rx:60, ry:70, g:"pine", n:26, c:"--swamp"},
-    {cx:880, cy:230, rx:110, ry:120, g:"pine", n:40, c:"--swamp"},
-    {cx:880, cy:610, rx:110, ry:70, g:"grass", n:30, c:"--swamp"},
-    {cx:640, cy:470, rx:90, ry:50, g:"grass", n:24, c:"--swamp"},
-    {cx:452, cy:506, rx:80, ry:42, g:"grass", n:30, c:"--swamp"}
+    {cx:610, cy:340, rx:90, ry:56, g:"reed", n:50, c:"--swamp"},
+    {cx:466, cy:384, rx:60, ry:30, g:"reed", n:22, c:"--swamp"},
+    {cx:520, cy:120, rx:200, ry:90, g:"peak", n:44, c:"--ice"},
+    {cx:700, cy:150, rx:110, ry:70, g:"peak", n:18, c:"--ice"},
+    {cx:560, cy:654, rx:170, ry:34, g:"dune", n:40, c:"--sand"},
+    {cx:470, cy:568, rx:90, ry:30, g:"rock", n:24, c:"--sand"},
+    {cx:720, cy:590, rx:60, ry:40, g:"rock", n:12, c:"--sand"},
+    {cx:830, cy:400, rx:100, ry:80, g:"dead", n:46, c:"--grave"},
+    {cx:370, cy:300, rx:60, ry:90, g:"pine", n:30, c:"--swamp"},
+    {cx:900, cy:220, rx:90, ry:110, g:"pine", n:34, c:"--swamp"},
+    {cx:900, cy:620, rx:90, ry:60, g:"grass", n:24, c:"--swamp"},
+    {cx:600, cy:480, rx:70, ry:30, g:"grass", n:20, c:"--swamp"},
+    {cx:450, cy:470, rx:80, ry:34, g:"grass", n:28, c:"--swamp"}
   ];
   const glyph = (g, x, y, s) => {
     switch(g){
@@ -3017,18 +3145,20 @@ const WORLD = {
     if(nearPlace(x, y, 30) || x > 230 && y > 380 && y < 470) continue;
     waves += `<path class="g-wave" d="M${x-6} ${y}q3 -3 6 0t6 0"/>`;
   }
-  const routes = W.routes.map((r, i) => `<path id="wmr${i}" class="wm-route${r.sea ? " sea" : ""}${r.opt ? " opt" : ""}" d="${r.d}"><title>${e(r.n)}</title></path>`).join("");
+  const routes = W.routes.map((r, i) => `<path id="wmr${i}" class="wm-route${r.sea ? " sea" : ""}${r.raft ? " raft" : ""}${r.opt ? " opt" : ""}" d="${r.d}"><title>${e(r.n)}</title></path>`).join("");
   const regionLabels = regions.map(r => `<text class="wm-region${r.small ? " small" : ""}" x="${r.x}" y="${r.y}" style="--rc:var(${r.c})">${e(r.n.toUpperCase())}</text>`).join("");
-  const labPos = {r:[12, 4, "start"], l:[-12, 4, "end"], b:[0, 20, "middle"], t:[0, -12, "middle"]};
+  const labPos = {r:[12, 4, "start"], l:[-12, 4, "end"], b:[0, 20, "middle"], t:[0, -12, "middle"], c:[0, 4, "middle"], cl:[0, 4, "end"], cr:[0, 4, "start"]};
+  const zones = W.places.filter(p => p.zone).map(p => `<path class="wm-zone" data-wm="${p.id}" style="--pc:var(${p.c})" d="${p.zone}"><title>${e(p.n)}</title></path>`).join("");
   const places = W.places.map(p => {
     let mark;
     if(p.kind === "temple") mark = `<circle class="wm-halo" cx="${p.x}" cy="${p.y}" r="12"/><path class="wm-temple" d="M${p.x} ${p.y-9}L${p.x+8} ${p.y}L${p.x} ${p.y+9}L${p.x-8} ${p.y}Z"/>`;
     else if(p.kind === "town") mark = `<path class="wm-town" d="M${p.x-6} ${p.y+5}V${p.y-1}L${p.x} ${p.y-7}L${p.x+6} ${p.y-1}V${p.y+5}Z"/>`;
     else if(p.kind === "island") mark = `<circle class="wm-isle" cx="${p.x}" cy="${p.y}" r="5"/>`;
     else if(p.kind === "ruin") mark = `<circle class="wm-halo" cx="${p.x}" cy="${p.y}" r="12"/><path class="wm-ruin" d="M${p.x-7} ${p.y+5}v-10h3v10ZM${p.x-1} ${p.y+5}v-6h3v6ZM${p.x+5} ${p.y+5}v-8h3v8ZM${p.x-9} ${p.y+6}h19"/>`;
+    else if(p.kind === "area") mark = "";
     else mark = `<circle class="wm-spot" cx="${p.x}" cy="${p.y}" r="4"/>`;
     const [dx, dy, anchor] = labPos[p.lab || "r"];
-    return `<g class="wm-place k-${p.kind}${p.opt ? " opt" : ""}" data-wm="${p.id}" tabindex="0" role="button" aria-label="${e(p.n)}" style="--pc:var(${p.c})"><circle class="wm-hit" cx="${p.x}" cy="${p.y}" r="16"/>${mark}<text class="wm-label" x="${p.x+dx}" y="${p.y+dy}" text-anchor="${anchor}">${e(p.n)}</text></g>`;
+    return `<g class="wm-place k-${p.kind}${p.opt ? " opt" : ""}" data-wm="${p.id}" tabindex="0" role="button" aria-label="${e(p.n)}" style="--pc:var(${p.c})">${p.kind === "area" ? "" : `<circle class="wm-hit" cx="${p.x}" cy="${p.y}" r="16"/>`}${mark}<text class="wm-label" x="${p.x+dx}" y="${p.y+dy}" text-anchor="${anchor}">${e(p.n)}</text></g>`;
   }).join("");
 
   host.innerHTML = `
@@ -3045,7 +3175,11 @@ const WORLD = {
       <g class="wm-waves">${waves}</g>
       <path class="wm-land" d="${land}"/>
       ${isles.map(i => `<path class="wm-land${i.dark ? " wm-rock" : ""}" d="${i.d}"/>`).join("")}
-      <ellipse class="wm-lake" cx="338" cy="552" rx="22" ry="12"/><path class="wm-gorge" d="M512 552 C540 522 572 520 602 486"/><g class="wm-terrain">${terrain}</g>
+      <ellipse class="wm-lake" cx="364" cy="502" rx="20" ry="11"/><path class="wm-gorge" d="M606 540 C620 516 628 500 640 478"/>
+      <g class="wm-zones">${zones}</g>
+      <path class="wm-river" d="M590 78 C560 110 520 150 500 180 C486 200 480 230 478 260 C476 300 470 340 452 372 C440 392 420 404 400 410 C360 418 320 420 292 418"/><path class="wm-river thin" d="M466 382 C506 372 544 362 576 348"/>
+      <text class="wm-riverlabel" x="330" y="436">the Silver</text>
+      <g class="wm-terrain">${terrain}</g>
       ${regionLabels}
       <text class="wm-sealabel" x="120" y="400">TOWARD AVERRA</text>
       <path class="wm-averra" d="M66 226 Q40 214 14 208"/><path class="wm-averra-head" d="M14 208l9 -5l-2 9Z"/>
@@ -3081,11 +3215,11 @@ const WORLD = {
   function showPanel(id){
     const p = byId[id];
     const chs = p.ch.map(n => { const c = chapters[n-1]; return c ? `<a class="wm-ch" href="#${c.dataset.page}"><span>Chapter ${n}</span>${e(c.dataset.title)}</a>` : ""; }).join("");
-    panel.innerHTML = `<div class="m3-ph"><div class="eyebrow">${e({temple:"Temple", town:"Town or village", island:"Island", spot:"Place", ruin:"Landmark"}[p.kind])}${p.opt ? " · Optional" : ""}</div><h3>${e(p.n)}</h3></div>
+    panel.innerHTML = `<div class="m3-ph"><div class="eyebrow">${e({temple:"Temple", town:"Town or village", island:"Island", spot:"Place", ruin:"Landmark", area:"In-between area"}[p.kind])}${p.opt ? " · Optional" : ""}</div><h3>${e(p.n)}</h3></div>
       <p class="wm-about">${e(p.about)}</p>
       <div><div class="eyebrow">What's here</div><ul class="wm-list">${p.here.map(h => `<li>${e(h)}</li>`).join("")}</ul></div>
       <div><div class="eyebrow">Getting there</div><p class="wm-reach">${e(p.reach)}</p></div>
-      <div class="wm-chs">${chs}${p.id === "wm-council" || (p.opt && !p.ch.length) ? `<a class="wm-ch" href="#fields"><span>Atlas</span>The Council Fields</a>` : ""}</div>`;
+      <div class="wm-chs">${chs}${p.kind === "area" ? `<a class="wm-ch" href="#wilds"><span>Atlas</span>Between the Regions</a>` : ""}${p.id === "wm-council" || (p.opt && !p.ch.length) ? `<a class="wm-ch" href="#fields"><span>Atlas</span>The Council Fields</a>` : ""}</div>`;
     if(typeof autolink === "function") autolink(panel);
   }
   const VB0 = [0, 0, 1000, 700];
@@ -3171,7 +3305,7 @@ const WORLD = {
   host.addEventListener("click", ev => { if(suppress){ suppress = false; ev.stopPropagation(); ev.preventDefault(); } }, true);
   function select(id, zoom){
     if(!byId[id]) return;
-    svg.querySelectorAll(".wm-place").forEach(g => g.classList.toggle("sel", g.dataset.wm === id));
+    svg.querySelectorAll(".wm-place,.wm-zone").forEach(g => g.classList.toggle("sel", g.dataset.wm === id));
     showPanel(id);
     const narrow = host.querySelector(".wm-wrap").clientWidth < 640;
     if(zoom !== false && narrow){
