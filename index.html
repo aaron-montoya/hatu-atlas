@@ -244,6 +244,8 @@ a.ent.t-item{text-decoration-color:color-mix(in srgb, var(--gold) 80%, transpare
 .wm-riverlabel{font-family:var(--display);font-style:italic;font-size:11px;letter-spacing:.14em;fill:color-mix(in srgb, var(--ice) 70%, var(--fg));pointer-events:none}
 .wm-route.raft{stroke:color-mix(in srgb, var(--ice) 85%, var(--fg));stroke-dasharray:2 5;stroke-width:3}
 .wm-cuesta{fill:color-mix(in srgb, var(--stone) 70%, var(--land));stroke:var(--land-edge);stroke-width:1.1;stroke-linejoin:round}
+.yardmap{margin:16px 0}.yardmap svg{width:100%;height:auto;border:1px solid var(--line);border-radius:6px;display:block}.yardmap figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
+.ym-l{font-family:var(--body);font-size:9.5px;fill:var(--fg)}.ym-t{font-family:var(--mono);font-size:11px;font-weight:700;fill:var(--fg);letter-spacing:.1em}
 .wm-ruin{fill:var(--stone);stroke:var(--fg);stroke-width:1.1;stroke-linejoin:round}
 .wm-perch{pointer-events:auto} .wm-perch path{fill:var(--accent);stroke:var(--paper);stroke-width:1} .wm-perch circle{fill:var(--paper)}
 .wm-panel h3{font-size:1.6rem}
@@ -511,62 +513,127 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 <div class="co story" data-label="Settled: the previous Holder was Selene">Only one person has carried Thalos's pendant before: Selene, the explorer of the Second Age (<a href="#ch8">Chapter 8</a>). The glove the old man keeps was hers, the note under Liora's house in Chapter 7 is hers, and the island where her descendant Maro lives is where she went when Silverspring turned on her. The Elder knows the name but doesn't say it yet.</div>
 
 <h3>The old man's hut</h3>
-<p>Past the east gate, on the edge of the swamp road, is a small hut with a fenced yard and a goat. The old man inside recognizes the pendant the moment Liora walks in. He opens a chest and unwraps a worn leather falconer's glove with a purple stone set into its cuff. It belonged to Selene, the last Pendant Holder, who left it with the old man's family when she went to her island. The glove channels Thalos's power so he can take the form of a purple owl in the physical world.</p>
+<p>Past the east gate, on the edge of the road to the fields, is a small hut with a fenced yard and a goat. The old man inside recognizes the pendant the moment Liora walks in. He opens a chest and unwraps a worn leather falconer's glove with a purple stone set into its cuff. It belonged to Selene, the last Pendant Holder, who left it with the old man's family when she went to her island. The glove channels Thalos's power so he can take the form of a purple owl in the physical world.</p>
 <div class="co get" data-label="Item get">Falconry Glove. Summon Thalos and control him. RB is the Thalos button: tap it to send him to a target on his own, hold it to fly him yourself.</div>
-<p>The old man takes Liora out to the yard behind his hut, which is laid out like a little training course: a bell under the eave, a hedge and a fence, a stream with a target post on the far bank, an apple tree, a hayloft, a bucket by the well, a fence post with an owl carving, and the goat, which won't get out of the gate. Each step teaches one thing, in order, and the old man only moves on once you've done it.</p>
+<p>The old man's grandmother built the yard behind the hut for Selene, and nobody has touched it since. It's a training course for an owl: a bell under the eave, a barn with a hayloft, a hedge, a stream with a target post on the far bank, an apple tree, a well, and a goat that has decided the gate is hers. The old man knows every station by heart, because his grandmother drilled him on them as a boy, in case the owl ever came back. He walks Liora through them in order, and he only moves on when she's done each one. The whole course takes eight to ten minutes.</p>
 
-<h4>On Liora's arm</h4>
-<ol>
-<li><b>Summon.</b> Liora raises the glove and Thalos appears in a burst of purple feathers, landing on her arm. From now on he rides the glove whenever he isn't out.</li>
-<li><b>Send (tap RB).</b> The bell under the eave has an owl carved above it. Lock on to it with LT and tap RB. Thalos flies up on his own, rings it, and comes back to the glove. The old man points out the carving: owl carvings always mark something Thalos can use, and anything marked can be done with a tap. Then he hangs a second bell with no lock-on, and Liora taps RB facing it: with nothing locked on, Thalos goes for the marked thing straight ahead.</li>
-<li><b>What a send does depends on the target.</b> The old man runs Liora through three marked things in a row, each with a tap of RB:
+<h4>The yard</h4>
+<p>A fenced rectangle about 22 by 18 meters behind the hut, with the hut in the south-west corner and the only gate on the east side, opening onto the road. The ground is packed dirt and short grass, flat except for the stream bank. Nothing in the yard is more than four meters tall, so the camera never has to fight anything, and the fence is low enough that the player can see the road and the fields over it.</p>
+<figure class="yardmap">
+<svg viewBox="0 0 560 420" role="img" aria-label="Top-down plan of the old man's yard">
+  <defs><marker id="ym-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--accent)"/></marker></defs>
+  <rect x="0" y="0" width="560" height="420" fill="var(--land)"/>
+  <!-- road -->
+  <rect x="500" y="0" width="60" height="420" fill="color-mix(in srgb, var(--chest) 30%, var(--land))"/>
+  <text x="530" y="212" class="ym-l" text-anchor="middle" transform="rotate(90 530 212)">road to the fields · range run 40 m east →</text>
+  <!-- stream -->
+  <path d="M220 30 C300 20 400 40 500 34 L500 70 C400 76 300 56 220 66 Z" fill="var(--sea)" stroke="var(--land-edge)"/>
+  <text x="420" y="56" class="ym-l" text-anchor="middle">stream (2 m wide, knee deep)</text>
+  <!-- fence -->
+  <rect x="20" y="20" width="480" height="380" fill="none" stroke="var(--fg)" stroke-width="2" stroke-dasharray="6 4"/>
+  <!-- gate -->
+  <rect x="496" y="180" width="8" height="44" fill="var(--paper)" stroke="var(--fg)"/>
+  <text x="470" y="206" class="ym-l" text-anchor="end">gate (goat)</text>
+  <!-- hut -->
+  <rect x="30" y="270" width="130" height="110" fill="var(--stone)" stroke="var(--fg)"/>
+  <line x1="30" y1="325" x2="160" y2="325" stroke="var(--fg)" stroke-dasharray="3 3"/>
+  <text x="95" y="320" class="ym-t" text-anchor="middle">HUT</text><text x="95" y="338" class="ym-l" text-anchor="middle">roof ridge 4 m · door east</text>
+  <circle cx="166" cy="290" r="5" fill="var(--gold)" stroke="var(--fg)"/><text x="176" y="282" class="ym-l">① eave bell (2.5 m, owl mark)</text>
+  <!-- barn -->
+  <rect x="30" y="30" width="120" height="100" fill="var(--stone)" stroke="var(--fg)"/>
+  <text x="90" y="75" class="ym-t" text-anchor="middle">BARN</text><text x="90" y="92" class="ym-l" text-anchor="middle">hayloft door south, 3 m up</text>
+  <circle cx="90" cy="134" r="5" fill="var(--accent)" stroke="var(--fg)"/><text x="100" y="150" class="ym-l">⑧ loft rope (owl mark)</text>
+  <!-- bell pole -->
+  <circle cx="190" cy="120" r="5" fill="var(--gold)" stroke="var(--fg)"/><text x="200" y="124" class="ym-l">② bell pole (owl mark)</text>
+  <!-- hedge -->
+  <rect x="226" y="90" width="12" height="150" fill="var(--swamp)" opacity=".7"/><text x="244" y="170" class="ym-l">⑤ hedge (2.2 m tall)</text>
+  <!-- fence gap and target -->
+  <line x1="240" y1="80" x2="480" y2="80" stroke="var(--fg)" stroke-width="2"/><rect x="330" y="76" width="24" height="8" fill="var(--land)"/><text x="342" y="100" class="ym-l" text-anchor="middle">gap</text>
+  <rect x="338" y="22" width="8" height="12" fill="var(--open)" stroke="var(--fg)"/><text x="342" y="18" class="ym-l" text-anchor="middle">⑥ target post, far bank</text>
+  <!-- well -->
+  <circle cx="300" cy="260" r="14" fill="var(--paper)" stroke="var(--fg)" stroke-width="2"/><text x="300" y="234" class="ym-l" text-anchor="middle">③ well: lever (owl mark) + bucket ⑨</text>
+  <!-- apple tree -->
+  <circle cx="420" cy="300" r="34" fill="var(--swamp)" opacity=".55"/><circle cx="420" cy="300" r="5" fill="var(--fg)"/>
+  <text x="420" y="352" class="ym-l" text-anchor="middle">④ apple tree · ⑦ lantern + knothole</text>
+  <!-- fence post -->
+  <rect x="494" y="110" width="12" height="12" fill="var(--accent)" stroke="var(--fg)"/><text x="486" y="120" class="ym-l" text-anchor="end">③ carved fence post (perch)</text>
+  <!-- landing patch -->
+  <ellipse cx="250" cy="340" rx="40" ry="22" fill="none" stroke="var(--fg)" stroke-dasharray="3 3"/><text x="250" y="344" class="ym-l" text-anchor="middle">⑩ bare patch</text>
+  <!-- roof ridge marker -->
+  <text x="95" y="262" class="ym-l" text-anchor="middle">⑫ roof ridge</text>
+  <!-- Liora start -->
+  <circle cx="175" cy="330" r="6" fill="var(--accent)" stroke="var(--paper)" stroke-width="2"/><text x="186" y="334" class="ym-l">Liora starts here</text>
+  <!-- compass -->
+  <text x="40" y="408" class="ym-l">N ↑ · 1 square ≈ 1 m</text>
+</svg>
+<figcaption>The yard, top down. Numbers are the stations in the order the old man runs them.</figcaption>
+</figure>
+
+<h4>How the course is scripted</h4>
 <ul>
-<li>A lever on the well: Thalos strikes it and comes back.</li>
-<li>An apple on a low branch: he grabs it and brings it back to Liora's hand.</li>
-<li>The carved fence post: he lands on it and stays there, perched, until she calls him.</li>
-</ul></li>
-<li><b>Calling him back.</b> With Thalos perched on the fence post, tap RB again with nothing to target, and he flies back to the glove.</li>
-</ol>
+<li><b>One button at a time.</b> Every Thalos input starts disabled. Each station turns on exactly one (tap RB, then hold RB, then X, and so on) the moment the old man explains it, and the on-screen prompt for that button appears in the corner and stays there until the station is passed. Nothing is ever taken away again.</li>
+<li><b>The yard is the range.</b> During the course, the 40 m range is a soft wall at the fence line, so Thalos can't leave the yard until the range station. Stamina is infinite and the wheel is hidden until the stamina station.</li>
+<li><b>Done means done.</b> Each station has one completion check (the bell rang, the apple landed in Liora's hands, the goat left the gate). The old man's next line plays on that signal. There's no timer and no failure that resets the course; wrong attempts just get a hint line and another try.</li>
+<li><b>Highlights.</b> Anything Thalos can act on has an owl carving and a <i>Thalos action</i> (strike, grab, perch, pull, peck). It gets a soft purple outline when Liora locks on to it, or when a manually flown Thalos is within 3 m and facing it. The same outline is used everywhere in the game, so the yard is where players learn to read it.</li>
+<li><b>Send resolution.</b> A tap of RB picks, in order: the locked-on target if it has a Thalos action; otherwise the nearest marked thing within a 30° cone ahead of Liora and within range; otherwise, if Thalos is out, recall. If none of those, he just chirps.</li>
+</ul>
 
-<h4>Flying him yourself</h4>
-<ol start="5">
-<li><b>Take control (hold RB).</b> Hold RB and Thalos launches from the glove with the camera behind him. Steer with the left stick; the right stick moves the camera. He flaps on his own to stay level, so if you just steer, he glides along at the height he started. Liora stays where she is, standing guard.</li>
-<li><b>Climb (X).</b> Fly at the hedge. It's too high to glide over, so press X: each press is a hard flap that lifts him a little. Hold the stick back and flap a few times to clear it.</li>
-<li><b>Dive (RT).</b> The target post across the stream sits low behind the fence. Line up with it and hold RT. Thalos folds his wings and dives along the direction he's looking for as long as you hold it, and strikes whatever he hits. Let go of RT to pull up. Diving trades height for speed, so flap back up afterward.</li>
-<li><b>Hover (LT).</b> The old man has hung an old lantern in the apple tree, with a narrow knothole in the trunk behind it. Fly in close and hold LT: Thalos stops dead and hovers in place, and while hovering the left stick turns him on the spot instead of moving him. Turn to face the knothole, let go of LT, and slip through it. Hovering is how you line up anything tight.</li>
-<li><b>Interact while flying (RB).</b> While you're flying, anything Thalos can use lights up with a soft purple outline when he's close and facing it. Press RB and he does whatever fits: strikes a switch, grabs an item, pecks an enemy, pulls a rope. Fly up to the hayloft and press RB on the highlighted rope: he pulls it, and the loft door swings open.</li>
-<li><b>Carry and drop (Triangle).</b> Inside the loft is a basket of apples on a high shelf. Press RB on one and Thalos picks it up in his talons. Fly back out and press Triangle over Liora to drop it into her hands. Apples heal a quarter heart. Then the old man has you drop a second apple into the bucket by the well, which teaches aiming: the drop falls straight down from where Thalos is, so hover over the bucket with LT first. On his own, Thalos can carry light things: apples, seeds, burning sticks, snowballs, keys, a plank.</li>
-<li><b>Land and hop.</b> Dive into an open patch of ground and Thalos lands instead of striking it. On the ground he hops around with the left stick, slower than flying but with no stamina cost, and he recovers stamina while he's down. Press X to take off again.</li>
-<li><b>Distract.</b> The goat is planted in the yard gate. Land Thalos right in front of it and hop around: the goat lowers its head and chases him round and round the yard, and the gate is clear. The old man says the same trick works on anything that hates birds, which is most things.</li>
-<li><b>Hand back control.</b> Fly Thalos up onto the hut's roof ridge and land. Tap RB with nothing highlighted and control goes back to Liora, but Thalos stays where he is. If he's perched or landed, he waits there; if he's hovering, he keeps hovering until his stamina runs out. Tap RB again with nothing to target to call him home.</li>
-<li><b>Recall (Circle).</b> Take control of him on the roof again, fly off, and press Circle: he turns around and flies straight back to the glove from wherever he is.</li>
+<h4>Stations</h4>
+<ol>
+<li><b>Summon.</b> The old man straps the glove onto Liora's left arm at the hut's back door. "Hold it up." A prompt: <i>hold RB</i>. Thalos bursts out of the stone in purple feathers and lands on her arm, and the glove icon appears on the HUD with Thalos sitting on it. The old man goes quiet for a second. "Well. There you are." (Thalos, through the pendant: "Hello, old friend's grandson.")</li>
+<li><b>Send, with lock-on. (tap RB)</b> The old man points at the bell under the eave, two and a half meters up, with the owl carving above it. "Look at it. Hold your eye on it." <i>Hold LT to lock on</i> appears. The bell outlines purple. "Now send him." <i>Tap RB</i>. Thalos flies up, rings it, and comes straight back to the glove. Done when the bell rings. "That carving. Her grandmother cut those. Wherever you see an owl in the stone, he can do something there."</li>
+<li><b>Send, without lock-on.</b> He walks Liora to the middle of the yard and turns her to face the bell pole by the barn, twelve meters off. "Don't stare at it this time. Just face it, and send him." Tap RB with no lock-on sends Thalos to the nearest marked thing ahead. Done when that bell rings. Fail hint if she's facing nothing: Thalos chirps and the old man says "Face it, girl."</li>
+<li><b>Three sends, three answers.</b> Still in the middle of the yard. "Now watch what he does, because it isn't always the same thing." Three targets in a row, each by lock-on and a tap:
+<ul>
+<li>The well's lever, four meters away: Thalos strikes it, the bucket rattles up on its chain, and he comes back.</li>
+<li>An apple on the tree's lowest branch: he grabs it and drops it in Liora's hand. <i>Apples heal a quarter heart</i>, the first pickup message.</li>
+<li>The carved fence post by the gate: he lands on it and stays, and the glove icon shows an empty glove. "He'll sit there all day if you let him."</li>
+</ul>
+Done when he's perched. Then: "Call him." A tap of RB with nothing to target brings him back to the arm. The HUD prompt reads <i>tap RB: call back</i> while he's out and nothing is targeted.</li>
+<li><b>Take control, and climb. (hold RB, X)</b> The old man walks her to the hedge, which runs across the middle of the yard, 2.2 m tall. "Her grandmother said flying him yourself is where it gets interesting. Hold the button down and don't let go." <i>Hold RB</i>. The camera swings behind Thalos as he launches from the glove, and Liora plants her feet where she stands. Left stick steers; he auto-flaps to hold whatever height he's at, so a player who just pushes forward glides into the hedge and bounces off it. "Up. Push him up." <i>X: flap</i>. Each press lifts him about a meter. Three flaps clear the hedge. Done when Thalos crosses the hedge line. If the player lets go of RB early, Thalos flutters back to the glove and the old man says "All the way over, then let go."</li>
+<li><b>Dive. (hold RT)</b> Past the hedge is the stream, with a low fence along its near bank and one gap in it, and the target post on the far bank, a meter high with a painted ring. "There. Through the gap, and hit it." <i>Hold RT: dive</i>. Holding RT folds his wings and drops him along his look direction; letting go pulls up. The gap is wide enough that a straight line through it hits the post. Done when the post is struck (it spins on its stake). Fail: diving into the water gives a splash, Thalos shakes himself off on the bank and the player keeps flying; the old man laughs.</li>
+<li><b>Hover. (hold LT)</b> Fly him back over the hedge to the apple tree. An old lantern hangs from a branch in front of a knothole in the trunk about the size of an owl, with another owl carving beside it. "Stop him. Right there, in the air." <i>Hold LT: hover</i>. He stops dead, and while LT is held the left stick turns him on the spot. "Now face the hole, and go." Let go of LT and push forward: he goes through the knothole and out the other side of the trunk. Done when he passes through. This is the station that teaches lining up anything tight, and it's the one the temple's first room (the switch behind the narrow gap) tests again.</li>
+<li><b>Interact while flying. (RB)</b> Fly to the barn. Its hayloft door is three meters up on the south wall, shut, with a rope hanging beside it and an owl carving above the rope. When Thalos is within three meters and facing the rope, it outlines purple. "When something lights up like that, he knows what to do with it. Tell him." <i>RB: interact</i>. He grabs the rope and pulls; the loft door swings open. Done when the door is open. The old man: "Switches, ropes, things that need carrying, things that need biting. If it lights, he can."</li>
+<li><b>Carry and drop. (Triangle)</b> Inside the loft is a shelf with a basket of apples. RB on an apple: he picks it up in his talons, and the glove icon shows a small apple under it. "Bring it to me. No, to her." Fly over Liora and press <i>Triangle: drop</i>. The apple falls into her hands. Done when she has it. Then: "Now one in the bucket." The well's bucket, which the lever raised earlier, sits open on the well's rim. Drops fall straight down from where Thalos is, so a moving owl misses; the fix is to hover (LT) over the bucket first, then Triangle. Done when the apple lands in the bucket. Fail: an apple on the ground gets eaten by the goat, which has wandered in from the gate; the old man hands over another ("I have a tree full"). What he can carry on his own: apples, seeds, burning sticks, snowballs, small stones, keys, a single plank. Anything heavier waits for Talon Grip in Chapter 6.</li>
+<li><b>Land and hop.</b> A bare patch of dirt in front of the hut, roughly three meters across, marked on the ground by a ring of old pebbles. "Put him down." Dive (RT) into open ground and he lands instead of striking. On the ground, the left stick hops him around at walking pace; it costs no stamina, and once the stamina wheel exists, it refills here. X takes off again. Done when he lands inside the ring and hops once.</li>
+<li><b>Distract.</b> The goat is standing square in the gate, and has been since the course began; it's the reason the yard is closed. "She hates him. Always did hate owls." Land Thalos a meter in front of the goat and hop. The goat lowers her head and charges him, and he hops out of the way; she chases him round the yard, and the gate is clear. Done when the goat is more than six meters from the gate. The old man: "Works on most things with teeth." The goat stays loose in the yard from now on, which matters in station 14.</li>
+<li><b>Hand back control.</b> With Thalos still out, fly him up onto the hut's roof ridge and land. "Now leave him there and come back to yourself." <i>Tap RB with nothing lit: back to Liora</i>. The camera cuts back to Liora, who unfreezes; Thalos stays on the ridge, and the glove icon shows him away. The old man has her walk to the well and back while the owl watches from the roof. "If he's sitting, he'll sit. If he's hovering, he'll hover till he's tired." Done when Liora has walked ten meters with Thalos still on the roof.</li>
+<li><b>Recall. (Circle)</b> Take control of him on the roof again (hold RB while he's out takes over wherever he is), fly him out over the yard, and press <i>Circle: recall</i>. He turns and flies straight back to the glove from wherever he is, through anything in the way; recall has no path. Done when he's on the arm. "That one's for when you need him now."</li>
+<li><b>Range.</b> The goat is out of the gate now, so the yard is open. The old man walks Liora out onto the road. "Send him off up the road and see how far he'll go." Fly Thalos east along the road. At thirty meters the stone in the glove's cuff starts flickering on the HUD and his light thins; at forty he slows to a stop against a soft wall, and the stick pushes against it. Then: "Now walk after him." The range moves with Liora, so as she walks, he can go on. Forty meters up the road is a stump with the last of the grandmother's owl carvings on it; done when Thalos perches on it. "That's as far as he goes from you. Far enough."</li>
+<li><b>Stamina.</b> Back in the yard. "He tires, you know. Hold him in the air and see." The stamina wheel appears around the glove icon. Hover (LT) over the yard: the wheel drains in about ten seconds of hovering, and when it empties, Thalos sags, flutters back to the glove on his own and sits there puffed up; the icon greys out for four seconds and he can't be sent. Gliding drains the wheel slowly (about forty seconds of plain flight), hard flaps and hovering faster, a dive costs a fixed chunk, and perching or landing refills it. Done when the wheel has emptied once and refilled.</li>
+<li><b>While he's out, you're standing still.</b> The last lesson is the goat's. The old man tells Liora to fly Thalos up to the roof again. While the player is flying him, the loose goat trots up behind Liora and butts her. Control snaps back to Liora, she staggers, and Thalos stays on the roof. "That," says the old man, "is why you tap him at things when there's trouble, and only fly him when there isn't." Done when the player calls Thalos back. From here on this is a standing rule: a hit on Liora ends manual flight at once.</li>
 </ol>
-
-<h4>How far, and for how long</h4>
-<ol start="15">
-<li><b>Range.</b> The old man tells Liora to fly Thalos out toward the swamp road as far as he'll go. About 30 meters out, the stone in the glove's cuff starts to flicker and his light thins, and at about 40 meters he can't go any farther: he slows, and the stick pushes against a soft wall. If Liora walks after him, the range moves with her. The glove's stone always shows how close he is to the edge.</li>
-<li><b>Stamina.</b> A ring around the glove icon is his stamina wheel. Gliding drains it slowly, hard flaps and hovering faster, and diving costs a chunk. Perching or landing refills it. When it runs out, he gets tired and flutters back to the glove on his own, and can't go out again for a few seconds. The old man has Liora hover him over the yard until he runs out, so players see it happen once on purpose.</li>
-<li><b>Liora while he's out.</b> While you fly Thalos, Liora stands still with her guard up. If something hits her, control snaps back to her and Thalos keeps doing whatever he was doing. That's why the safe habit is to send him with a tap during fights and only fly him by hand when things are calm.</li>
-</ol>
+<p>When the last station is done, the old man sits down on the well's rim. He tells Liora that his grandmother ran this yard for the woman who carried the glove before her, that the woman went to an island when the village turned on her, and that she said the owl would choose again one day. He doesn't say Selene's name; Maro does, in <a href="#ch8">Chapter 8</a>. He gives Liora a sack of apples for the road.</p>
+<div class="co tip" data-label="Design note">Every station maps to a real use later: the eave bell is every owl switch, the knothole is the Sunken Gate's gap, the loft rope is every lever, the bucket is dropping a stick into a brazier, the goat is the distract trick in the Rat Barracks, the roof is leaving him on the floodgate switch, and the range stump is the Root Lift. If a station doesn't have a payoff within the first temple, cut it.</div>
 
 <div class="co tip" data-label="Thalos controls">
 <ul>
-<li><b>On the glove:</b> tap RB to send him to the locked-on or marked target ahead; hold RB to launch and fly him. With him out, tap RB with nothing targeted to call him back.</li>
+<li><b>On the glove:</b> tap RB to send him to the locked-on or marked target ahead; hold RB to launch and fly him. With him out, tap RB with nothing targeted to call him back, or hold RB to take control of him where he is.</li>
 <li><b>Flying:</b> left stick to steer (he auto-flaps to hold height), X for a hard flap to climb, hold RT to dive, LT to hover in place, RB to interact with whatever's highlighted, Triangle to drop what he's carrying, Circle to recall.</li>
 <li><b>Handing back:</b> tap RB with nothing highlighted, and Liora takes over while Thalos stays where he is.</li>
 <li><b>On the ground:</b> left stick to hop, X to take off. Landing near enemies distracts them.</li>
 <li><b>Range:</b> about 40 meters from Liora, with the glove's stone flickering past 30.</li>
 <li><b>Stamina:</b> drains while flying, faster while hovering, flapping and diving. Refills when he's perched or landed. Every Enchanted Scroll adds 25%.</li>
+<li><b>If Liora is hit</b> while you're flying him, control snaps back to her and Thalos stays where he is.</li>
 <li><b>Later:</b> Gale Wings: while hovering, tap RT for a wing blast instead of a dive (Chapter 3). Talon Grip lets him lift heavy things, and a send while carrying makes him hover over the target (Chapter 6). Resonant Strike rings bells and shatters shadow from where he is (Chapter 10). Divine Dive: while hovering, hold RT instead of tapping it to charge a glowing dive, and release it to break wards (Chapter 12).</li>
 </ul>
 </div>
 
+<h3>Back through town</h3>
+<p>The walk back from the hut to the east gate and up into the village is the first time Thalos is out in the world, and the town has three small things for him before Liora leaves. None is required.</p>
+<ul>
+<li><b>The watchtower bell.</b> On the clifftop, the watchtower's horn hangs next to a bell with an owl carving. Send Thalos to ring it, and the watchman on the platform jumps, looks down, and laughs: the first NPC who reacts to the owl. Every owl-marked thing in Silverspring that isn't a puzzle is a reaction like this.</li>
+<li><b>The shutters.</b> A house on the market street has a shuttered upstairs window with an owl carving on the sill. Send Thalos to pull the shutter open, and an old woman inside tosses out a Goin for the trouble. Ten Goins, once.</li>
+<li><b>The chimney.</b> The locked-out man, below.</li>
+</ul>
+
 <h3>Side quest: Locked Out <span class="pill prop">Proposed</span></h3>
-<p>Back in the market square, the man stuck outside his house is pacing. "Arghhh, I'm locked out! If I could get up on the roof and through the chimney, I could get in." Liora can't climb up there, but Thalos can fly. Hold the Thalos button and fly him up onto the roof and down the chimney. The camera follows him into the dark house. Fly to the front door and dive into the latch to knock it open. The man rushes in and comes back out with a small owl statue he found while fishing years ago, and gives it to Liora as thanks.</p>
+<p>Back in the market, the man stuck outside his house is still pacing. "Arghhh, I'm locked out! If I could get up on the roof and through the chimney, I could get in." His house is in the row dug into the cliff, so its roof is level with the stair to the clifftop, and its chimney has no owl carving: this is the first thing in the game Thalos has to be flown to by hand. Hold RB, flap up onto the roof, hover over the chimney and drop in. The camera follows him down into the dark house. The front door's latch lights up purple from inside: RB, and he knocks it open. The man rushes in, and comes back out with a small owl statue he found while fishing years ago, and gives it to Liora as thanks.</p>
 <div class="co totem" data-label="Totem of Strength #1">Reward for Locked Out. Four Totems of Strength add one heart to Liora's health.</div>
 
 <h3>Leaving Silverspring</h3>
-<p>When Liora reaches the east gate, Thalos speaks through the pendant. He can feel one piece of himself to the east, in the Temple of Reedtona in the Great Swamp, and it's the nearest. The watch captain and Wren see her off at the gate. Beyond it, the road runs out into the Council Fields, the rolling heart of Hatu. From the first crest, Liora sees the Council Rock in the distance: a pale cliff with an overhanging lip and broken arches standing on top. The river road follows the river Silver north past its foot, toward the swamp.</p>
+<p>When Liora reaches the east gate, Thalos speaks through the pendant. He can feel one piece of himself to the east, in the Temple of Reedtona in the Great Swamp, and it's the nearest. The watch captain and Wren see her off at the gate; Wren wants to come, and the captain says no. Beyond it, the road runs out into the Council Fields, the rolling heart of Hatu. From the first crest, Liora sees the Council Rock in the distance: a pale cliff with an overhanging lip and broken arches standing on top. The river road follows the river Silver north past its foot, toward the swamp.</p>
+<p>On the way down the first hill, three Mirelings come up out of the ditch by the road, the first fight with Thalos in hand. They charge in straight lines, same as in the training yard, and the new move is a tap of RB at one while it's winding up: Thalos pecks it and it stalls, and Liora gets a free hit. It's the only new idea the fields add before the swamp, and the sack of apples covers any mistakes.</p>
 </div>
 </article>
 
