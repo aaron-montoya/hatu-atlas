@@ -243,6 +243,7 @@ a.ent.t-item{text-decoration-color:color-mix(in srgb, var(--gold) 80%, transpare
 .wm-river{fill:none;stroke:color-mix(in srgb, var(--ice) 40%, var(--sea));stroke-width:4.5;stroke-linecap:round;pointer-events:none} .wm-river.thin{stroke-width:3}
 .wm-riverlabel{font-family:var(--display);font-style:italic;font-size:11px;letter-spacing:.14em;fill:color-mix(in srgb, var(--ice) 70%, var(--fg));pointer-events:none}
 .wm-route.raft{stroke:color-mix(in srgb, var(--ice) 85%, var(--fg));stroke-dasharray:2 5;stroke-width:3}
+.wm-cuesta{fill:color-mix(in srgb, var(--stone) 70%, var(--land));stroke:var(--land-edge);stroke-width:1.1;stroke-linejoin:round}
 .wm-ruin{fill:var(--stone);stroke:var(--fg);stroke-width:1.1;stroke-linejoin:round}
 .wm-perch{pointer-events:auto} .wm-perch path{fill:var(--accent);stroke:var(--paper);stroke-width:1} .wm-perch circle{fill:var(--paper)}
 .wm-panel h3{font-size:1.6rem}
@@ -526,7 +527,7 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 <div class="co totem" data-label="Totem of Strength #1">Reward for Locked Out. Four Totems of Strength add one heart to Liora's health.</div>
 
 <h3>Leaving Silverspring</h3>
-<p>When Liora reaches the east gate, Thalos speaks through the pendant. He can feel one piece of himself to the east, in the Temple of Reedtona in the Great Swamp, and it's the nearest. The watch captain and Wren see her off at the gate. Beyond it, the road runs out into the Council Fields, the open heart of Hatu, and from the Council ruins the river road follows the river Silver north toward the swamp.</p>
+<p>When Liora reaches the east gate, Thalos speaks through the pendant. He can feel one piece of himself to the east, in the Temple of Reedtona in the Great Swamp, and it's the nearest. The watch captain and Wren see her off at the gate. Beyond it, the road runs out into the Council Fields, the rolling heart of Hatu. From the first crest, Liora sees the Council Rock in the distance: a pale cliff with an overhanging lip and broken arches standing on top. The river road follows the river Silver north past its foot, toward the swamp.</p>
 </div>
 </article>
 
@@ -534,7 +535,7 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
 <article class="page" data-page="ch2" data-title="The Great Swamp" data-region="The Great Swamp" data-status="outlined" data-color="--swamp"
   data-goals="Meet Mother Firefly and get the Firefly Lantern|Help the hanging bean pod|Earn the Rocklets' trust|Reach the Temple of Reedtona">
 <div class="prose">
-<p>From the Council ruins, the river road follows the river Silver north, and within a minute the fields give way to the <a href="#wilds">Reed Delta</a>, where the river splits into dozens of shallow channels between islands of reeds. Liora crosses on the Rocklets' old stepping stones, which sink slowly under her, so she has to keep moving. Where a channel is too wide, Thalos carries a plank across from the far bank and drops it into place. Rovans dive at her from the dead willows.</p>
+<p>From the foot of the Council Rock, the river road follows the river Silver north, and within a minute the fields give way to the <a href="#wilds">Reed Delta</a>, where the river splits into dozens of shallow channels between islands of reeds. Liora crosses on the Rocklets' old stepping stones, which sink slowly under her, so she has to keep moving. Where a channel is too wide, Thalos carries a plank across from the far bank and drops it into place. Rovans dive at her from the dead willows.</p>
 <p>On the first bend of the river stands Mother Firefly's tree. Past it, the channels thicken into mud and a rotting boardwalk leads east into the Great Swamp. To the north, Liora can see the river coming down out of a canyon, with a grey quicksand marsh at its foot: the Gorge, and the way to the mountain, for later. The Great Swamp is the first real region of the game, and it's built to show players two things they can't handle yet: deep mud and quicksand.</p>
 
 <h3>Getting around the swamp</h3>
@@ -1453,7 +1454,7 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
     <p class="lede">The open heart of Hatu, with the Council ruins in the middle. Three roads leave the fields for the regions, and the fields keep changing as Liora gets new items and the clock turns. The regions also connect to each other; see <a href="#wilds">Between the Regions</a>.</p>
   </div>
   <div class="prose">
-    <p>Silverspring's east gate opens straight onto the fields: rolling grassland dotted with old stone walls, lone trees and the occasional shepherd's hut. They're small and dense on purpose. It takes about a minute to cross from one side to the other, and there's something to find in every direction.</p>
+    <p>Silverspring's east gate opens onto rolling hills: long, soft swells of grass that rise and fall like a slow sea, with old stone walls running over the crests, lone oaks in the hollows and the occasional shepherd's hut. From the top of one swell you see the next three; down in a hollow you see nothing but grass and sky, so the land itself hides and reveals things as Liora walks. The river Silver winds through the low ground with a ford and an old mill. It takes a couple of minutes to cross, and there's something to find over most rises.</p>
 
     <h3>Roads out</h3>
     <ul>
@@ -1475,8 +1476,15 @@ The Silverspring smith upgrades the sword once the forge reopens after Chapter 1
     <div class="co tip" data-label="Nudges, not walls">Thalos can comment when Liora reaches a gate too early, so players know it's for later: "That sand would swallow us whole," at the marsh, or "We'd never find our way in that storm," at the sandstorm. He never stops her or turns her around himself. The world does that.</div>
 
     <h3>The Council ruins</h3>
-    <p>In the middle of the fields is the broken hall where Hatu's peoples once met as the Council of Guardians, the pact they made to protect the land if anything bad ever happened. The roof fell in long ago. What's left is a ring of carved stone seats, one for each people: a mossy round seat for the Rocklets, a tall one for the Frostmurians, a plain wooden bench for Silverspring, and a copper chair the robots bolted on when they joined.</p>
-    <p>It's the first place Liora passes through, and the landmark players steer by. A traveling merchant sets up camp against the old walls between chapters, with stock that grows as the game goes on.</p>
+    <p>The ruins stand on top of the Council Rock, a cuesta in the middle of the fields: a ridge of pale stone that rises gently on one side and breaks off in a sheer cliff on the other.</p>
+    <ul>
+      <li><b>The face.</b> The side that looks out over the fields is the cliff, and its lip overhangs the grass below like a frozen wave, with the broken arches and columns of the hall standing right at the edge. From almost anywhere in the fields, and from the road out of Silverspring, the first thing you see is that silhouette: the overhang against the sky with the ruins on top. It's the landmark players steer by.</li>
+      <li><b>Under the overhang.</b> The cliff's foot is a long, dry hollow out of the rain and wind, with old carvings of the Council's peoples on the rock. The traveling merchant camps here between chapters, and the river road and the old road both pass close by.</li>
+      <li><b>The back.</b> The far side of the rock is the long slope, steeper hills of grass and broken stone that Liora can walk straight up. Getting to the ruins means going around the rock and climbing the back, so the first visit is a little journey: you see the ruins from below, lose sight of them as you walk around, and then come over the crest of the slope and they're suddenly in front of you.</li>
+      <li><b>The way down.</b> Once Liora has been up, an old Council rope-and-pulley lift at the lip of the overhang can be lowered, a shortcut between the top and the merchant's hollow. The owl perch stands at the top, right at the edge.</li>
+    </ul>
+    <p>On top is the broken hall where Hatu's peoples once met as the Council of Guardians, the pact they made to protect the land if anything bad ever happened. The roof fell in long ago. What's left is a ring of carved stone seats, one for each people: a mossy round seat for the Rocklets, a tall one for the Frostmurians, a plain wooden bench for Silverspring, and a copper chair the robots bolted on when they joined.</p>
+    <p>The merchant's stock under the overhang grows as the game goes on.</p>
     <div class="co story" data-label="Story (proposed)">Before the fortress, the peoples of Hatu answer Thalos's call and meet here again: the Rocklet elder, the Frostmurian chieftain, the robots' leader, Maro, and Silverspring's Elder. The Council of Guardians reforms for the first time since the Third Age, and each people sends Liora off with a gift for the final climb.</div>
 
     <h3>Owl perches</h3>
@@ -2958,9 +2966,9 @@ const WORLD = {
    here:["Sword and Falconry Glove (Chapter 1)","Seashell Necklace in Liora's secret basement (Chapter 7, needs the Magnetic Gauntlet)","Totem of Strength #1 from Locked Out","Mystic Fireflies #10 and #11 (basement, sea cave under the temple)","Come back for: the sea cave (necklace), the fallen rope bridge to the watchtower (Chapter 7), the founders' wreck past the point"],
    reach:"Start of the game. The east gate opens onto the Council Fields; the Shore runs south along the cliffs."},
   {id:"wm-council", n:"Council ruins", kind:"ruin", x:420, y:478, ch:[], c:"--accent", lab:"b",
-   about:"The broken hall at the heart of the Council Fields, where Hatu's peoples once met as the Council of Guardians. The roof is long gone, but stone seats for the Rocklets, the Frostmurians, Silverspring and the robots still stand in a ring.",
-   here:["Owl perch at the center: the first fast-travel point","A traveling merchant camps here between chapters","Late in the game, the Council meets here again (proposed)"],
-   reach:"Through Silverspring's east gate. The Reed Delta, the Badlands and the old road all leave from here."},
+   about:"The broken hall on top of the Council Rock, a cuesta in the middle of the rolling Council Fields. Its cliff face, with an overhanging lip, looks out over the fields with the ruins standing at the edge; its back is a long slope Liora can walk up. Hatu's peoples once met here as the Council of Guardians, and stone seats for the Rocklets, the Frostmurians, Silverspring and the robots still stand in a ring.",
+   here:["Owl perch at the lip of the overhang: the first fast-travel point","The traveling merchant camps in the hollow under the overhang between chapters","A rope-and-pulley lift down the face, once Liora has climbed the back","Late in the game, the Council meets here again (proposed)"],
+   reach:"Through Silverspring's east gate. Walk around the rock and up the long slope at its back. The Reed Delta, the Badlands and the old road all leave from the fields around it."},
   {id:"wm-lake", n:"Mirror Lake", kind:"spot", x:364, y:502, ch:[], c:"--ice", lab:"l", opt:true,
    about:"A still lake in the fields with something drowned at the bottom.",
    here:["Sunken shrine: Totem of Strength #13","Mystic Firefly #19"],
@@ -3154,7 +3162,7 @@ const WORLD = {
     if(p.kind === "temple") mark = `<circle class="wm-halo" cx="${p.x}" cy="${p.y}" r="12"/><path class="wm-temple" d="M${p.x} ${p.y-9}L${p.x+8} ${p.y}L${p.x} ${p.y+9}L${p.x-8} ${p.y}Z"/>`;
     else if(p.kind === "town") mark = `<path class="wm-town" d="M${p.x-6} ${p.y+5}V${p.y-1}L${p.x} ${p.y-7}L${p.x+6} ${p.y-1}V${p.y+5}Z"/>`;
     else if(p.kind === "island") mark = `<circle class="wm-isle" cx="${p.x}" cy="${p.y}" r="5"/>`;
-    else if(p.kind === "ruin") mark = `<circle class="wm-halo" cx="${p.x}" cy="${p.y}" r="12"/><path class="wm-ruin" d="M${p.x-7} ${p.y+5}v-10h3v10ZM${p.x-1} ${p.y+5}v-6h3v6ZM${p.x+5} ${p.y+5}v-8h3v8ZM${p.x-9} ${p.y+6}h19"/>`;
+    else if(p.kind === "ruin") mark = `<path class="wm-cuesta" d="M${p.x-22} ${p.y+9}Q${p.x-8} ${p.y+2} ${p.x+6} ${p.y-4}L${p.x+16} ${p.y-7}L${p.x+12} ${p.y-2}L${p.x+14} ${p.y+9}Z"/><circle class="wm-halo" cx="${p.x}" cy="${p.y}" r="12"/><path class="wm-ruin" d="M${p.x-7} ${p.y+5}v-10h3v10ZM${p.x-1} ${p.y+5}v-6h3v6ZM${p.x+5} ${p.y+5}v-8h3v8ZM${p.x-9} ${p.y+6}h19"/>`;
     else if(p.kind === "area") mark = "";
     else mark = `<circle class="wm-spot" cx="${p.x}" cy="${p.y}" r="4"/>`;
     const [dx, dy, anchor] = labPos[p.lab || "r"];
