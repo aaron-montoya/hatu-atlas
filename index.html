@@ -100,6 +100,14 @@ main{min-width:0}
 .goals{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
 .goals ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:4px}
 .prose{display:flex;flex-direction:column;gap:14px}
+.ptoc{border:1px solid var(--line);border-radius:6px;padding:12px 16px;background:var(--paper)}
+.ptoc ol{list-style:none;margin:8px 0 0;padding:0;columns:2 15rem;column-gap:28px}
+.ptoc li{break-inside:avoid;padding:2px 0}
+.ptoc a{display:flex;gap:8px;color:var(--fg);text-decoration:none;font-size:.92rem;line-height:1.35}
+.ptoc a:hover{color:var(--t, var(--accent));text-decoration:underline}
+.ptoc ol:not(.num) .n{display:none}
+.ptoc .n{font-family:var(--mono);font-size:.72rem;color:var(--muted);min-width:1.7em;padding-top:2px;text-align:right}
+.prose h3[id], .wstep, .m3{scroll-margin-top:84px}
 .prose h3{margin-top:10px}
 .prose ul,.prose ol{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;max-width:66ch}
 
@@ -2120,6 +2128,33 @@ chapters.forEach((p, i) => {
   p.style.setProperty("--t", `var(${chColor(p)})`);
 });
 
+// On-this-page contents for the walkthrough pages
+const slugify = t => t.toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+pages.filter(p => /^ch\d+$/.test(p.dataset.page) || ["fields", "wilds"].includes(p.dataset.page)).forEach(p => {
+  const hs = [...p.querySelectorAll(".prose h3")];
+  if(hs.length < 2) return;
+  const used = new Set();
+  const items = hs.map(h => {
+    const c = h.cloneNode(true);
+    c.querySelectorAll(".pill").forEach(x => x.remove());
+    const sn = c.querySelector(".sn"), num = sn ? sn.textContent.trim() : "";
+    if(sn) sn.remove();
+    const label = c.textContent.replace(/\s+/g, " ").trim();
+    let id = h.id || `${p.dataset.page}-${slugify(label)}`, base = id, k = 2;
+    while(used.has(id)) id = `${base}-${k++}`;
+    used.add(id); h.id = id;
+    return `<li><a href="#${p.dataset.page}/${id}"><span class="n">${esc(num)}</span>${esc(label)}</a></li>`;
+  });
+  const nav = document.createElement("nav");
+  nav.className = "ptoc"; nav.setAttribute("aria-label", "On this page");
+  nav.innerHTML = `<div class="eyebrow">On this page</div><ol${hs.some(h => h.querySelector(".sn")) ? ' class="num"' : ""}>${items.join("")}</ol>`;
+  (p.querySelector(".goals") || p.querySelector(".phead")).after(nav);
+  nav.addEventListener("click", e => {
+    const a = e.target.closest("a");
+    if(a && a.getAttribute("href") === location.hash){ e.preventDefault(); show(location.hash.slice(1)); }
+  });
+});
+
 // Contents and home grid
 document.getElementById("tocChapters").innerHTML = chapters.map((p, i) =>
   `<li><a href="#${p.dataset.page}"><span class="n">${i+1}</span>${esc(p.dataset.title)}</a></li>`).join("");
@@ -3010,7 +3045,9 @@ function build(chapter, key){
     <div class="m3-body"><div class="m3-svgwrap"><svg class="m3svg" viewBox="${m.allVB.map(f1).join(" ")}" preserveAspectRatio="xMidYMid meet" role="group" aria-label="3D map">${svg}<g class="m3-sel"></g></svg></div>
     <aside class="m3-panel" aria-live="polite"></aside><div class="m3-extra"><div class="m3-legend">${leg}</div><div class="m3-rooms">${chips}</div></div></div>`;
   m.sec = sec; m.svg = sec.querySelector("svg"); m.vb = m.allVB.slice();
-  chapter.querySelector(".goals").after(sec);
+  const ptoc = chapter.querySelector(".ptoc");
+  (ptoc || chapter.querySelector(".goals")).after(sec);
+  if(ptoc) ptoc.querySelector("ol").insertAdjacentHTML("afterbegin", `<li><a href="#${chapter.dataset.page}/${sec.id}"><span class="n"></span>Temple map</a></li>`);
 
   sec.addEventListener("click", e => {
     const fb = e.target.closest("[data-floor]");
@@ -3558,6 +3595,9 @@ menuBtn.addEventListener("click", () => setMenu(!toc.classList.contains("open"))
 document.addEventListener("click", e => { if(toc.classList.contains("open") && !toc.contains(e.target) && e.target !== menuBtn) setMenu(false); });
 
 function show(id){
+  let sub = null;
+  const sl = id.indexOf("/");
+  if(sl > 0){ sub = id.slice(sl + 1); id = id.slice(0, sl); }
   let page = pages.find(p => p.dataset.page === id), target = null;
   if(!page && ENT[id]){
     const e = ENT[id];
@@ -3581,6 +3621,14 @@ function show(id){
   document.title = page.dataset.page === "home" ? "Hatu Atlas" : page.dataset.title + " · Hatu Atlas";
   setMenu(false);
   window.scrollTo(0, 0);
+  if(sub){
+    const el = document.getElementById(sub);
+    if(el && page.contains(el)) requestAnimationFrame(() => {
+      el.scrollIntoView({block:"start"});
+      const w = el.closest(".wstep");
+      if(w){ w.classList.add("flash-step"); setTimeout(() => w.classList.remove("flash-step"), 1600); }
+    });
+  }
   if(wmTarget && window.WMSelect) requestAnimationFrame(() => window.WMSelect(wmTarget));
   if(target){
     requestAnimationFrame(() => {
