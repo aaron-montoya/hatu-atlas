@@ -1450,7 +1450,7 @@ Embers, braziers and moss curtains wait for the Lantern Gallery, which teaches t
 
 <h3>The Sand Rod</h3>
 <p>The robots tell Liora that the temple's entrance is buried halfway up the biggest dune beyond the village. They keep it that way on purpose. They give her the tool they use to reach it, a rod of carved sandstone and copper with a glowing crystal at its tip.</p>
-<div class="co get" data-label="Item get">Sand Rod. Point it at sand and raise a pillar out of the ground. Liora can stand on the pillars, use them as walls, or block flowing sand with them. Up to three pillars at a time; making a fourth removes the oldest. This is the Pharaoh's Staff from your item list.</div>
+<div class="co get" data-label="Item get">Sand Rod. Point it at sand and raise a pillar out of the ground. Liora can stand on the pillars, use them as walls, or block flowing sand with them. Up to three pillars at a time; making a fourth removes the oldest. In a fight, raise a pillar right under an enemy standing on sand and it's launched into the air, and comes down stunned. This is the Pharaoh's Staff from your item list.</div>
 <p>A robot takes Liora to a training ground at the edge of the village to try it: raise a pillar to climb onto a ledge, then a row of pillars to cross a river of flowing sand, then a pillar to block a sandfall and walk underneath.</p>
 <div class="co ff" data-label="Mystic Firefly #13">In the garden dome. The robots have been taking care of it; one of them hands it over.</div>
 <div class="co ff" data-label="Mystic Firefly #14">At an oasis out in the dunes, northwest of the village. Like the village, it's cloaked; it only exists through the Mirage Mask.</div>
@@ -1676,7 +1676,7 @@ Embers, braziers and moss curtains wait for the Lantern Gallery, which teaches t
 <p><b>Phase 2:</b> it learns to stay out of the pool, circling just outside and lunging in. Send Thalos to carry the Moonstone after it. The pool of night moves with the owl and drags over the hound, making it solid where it stands.</p>
 </div>
 <p>Gryxil falls and fades. Where it lay is a long chain of pale, glowing links with a hook at the end. It's light as air.</p>
-<div class="co get" data-label="Item get">Spectral Chain. Throw it at ghostly objects and enemies to latch on. Pull to drag them into the physical world, or pull Liora toward them.</div>
+<div class="co get" data-label="Item get">Spectral Chain. Throw it at ghostly objects and enemies to latch on. Pull to drag them into the physical world, or pull Liora toward them. It works on most ordinary enemies too: it yanks them across to Liora, and they stumble at her feet, open for a combo. Big and heavy enemies pull Liora to them instead.</div>
 </section>
 
 <section class="wstep"><h3><span class="sn">7</span>Phantom Bridge <span class="pill room">E7</span></h3>
@@ -2900,13 +2900,13 @@ const ENTITIES = [
  does:"Shows hidden passages and cloaked places, and makes enemies' weak spots glow. Narrows Liora's view while it's on."},
 {id:"sandrod", page:"items", group:"Equipment", type:"Key item", n:"Sand Rod", where:"The robot village", ch:9, al:["Sand Rod","Pharaoh's Staff"], pal:["#d8b26e","#b87333","#7fd0ff"],
  look:"A rod of carved sandstone bound in copper, with a glowing crystal at its tip.",
- does:"Raises pillars of sand to stand on, block with, or redirect flowing sand. Up to three at once; a fourth removes the oldest. This is the Pharaoh's Staff from the item list."},
+ does:"Raises pillars of sand to stand on, block with, or redirect flowing sand. A pillar raised under an enemy on sand launches it, and it lands stunned. Up to three at once; a fourth removes the oldest. This is the Pharaoh's Staff from the item list."},
 {id:"stones", page:"items", group:"Equipment", type:"Key item", n:"Sunstone & Moonstone", where:"Desert Temple, from Sandrix", ch:10, al:["Sunstone & Moonstone","Sunstone and Moonstone","Sunstone","Moonstone"], pal:["#f2b84b","#c0c6cc","#2b2116"],
  look:"Two palm-sized stones: one gold and warm to the touch, one silver and cool. They fit together like two halves.",
  does:"A thrown stone lands and fills a sphere a few steps wide with daylight (Sunstone) or night (Moonstone). Daylight lights, burns and ignites sun symbols; night reveals, cools and triggers moon symbols; where the two overlap there's an eclipse. Stones fly back after about twelve seconds, or sooner on R2. Thalos can carry one, and the light moves with him."},
 {id:"chain", page:"items", group:"Equipment", type:"Key item", n:"Spectral Chain", where:"Eldergrove Temple, from Gryxil", ch:12, al:["Spectral Chain"], pal:["#dfe9f2","#a892ff","#3a2f3f"],
  look:"A long chain of pale, glowing links with a hook on the end, as light as air.",
- does:"Latches onto ghostly objects and enemies. Pull them into the physical world as platforms, or drag them toward Liora."},
+ does:"Latches onto ghostly objects and enemies. Pull them into the physical world as platforms, or drag them toward Liora. Most ordinary enemies get yanked across to her and stumble at her feet, open for a combo."},
 {id:"greattotem", page:"items", group:"Equipment", type:"Upgrade", n:"Great Totem of Strength", where:"Where each temple boss falls", ch:3, al:["Great Totem of Strength","Great Totem"], pal:["#d9a441","#f6e27a","#6b5a44"],
  look:"A full-size owl totem of carved stone, glowing gold, that rises out of the ground where a temple boss falls.",
  does:"One full extra heart. Worth four Totems of Strength. There are four, one per temple boss."},
