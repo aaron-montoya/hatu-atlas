@@ -439,17 +439,35 @@ a.pill.wm-link{text-decoration:none;color:var(--accent)}
 
 <!-- CH1 -->
 <article class="page" data-page="ch1" data-title="Chosen by Thalos" data-region="Silverspring" data-status="outlined" data-color="--accent"
-  data-goals="Wake up and follow Wren to the training yard|Pass the Watch Captain's drills|Meet the Village Elder|Be chosen by the Pendant of Thalos|Get the Falconry Glove from Oren|Train with Thalos in the Roost|Pen Turnip and get the town gate key|Optional: the steel sword, and help the locked-out villager">
+  data-goals="Wake up on Choosing Day and follow Wren to the Proving|Pass the Watch Captain's drills in front of the town|Walk the ring at the Choosing|Be chosen by the Pendant of Thalos|Get the Falconry Glove from Oren|Train with Thalos in the Roost|Pen Turnip and get the town gate key|Optional: the steel sword, and help the locked-out villager">
 <div class="prose">
-<h3>Opening cutscene</h3>
-<p>A narrator tells how Silverspring was founded: faithful refugees from the wars of Averra were shipwrecked on these cliffs, found a clear spring and a bay full of fish, and stayed. The camera flies over the town at dawn, past the wreck, along the docks, and in through Liora's open bedroom window. The watchtower horn sounds, and she sleeps through it. Wren taps on her shutters and yells up from the street.</p>
+<div class="co tip" data-label="Changed from the current build">Chapter 1 is now built around Choosing Day, the town's yearly pendant festival, to give the player a reason to care about Thalos before they meet him. What changes from what's built:
+<ul>
+<li>The narrator opening becomes a puppet show, a memory of Liora as a little girl with her father.</li>
+<li>The town is decorated for the festival, with stalls, banners, owl masks and festival townsfolk lines.</li>
+<li>The drills become the Proving, a public demonstration with a crowd at the fence, and the Mirelings interrupt it.</li>
+<li>The messenger is gone. The Choosing happens at sunset, with the young people walking the ring in turn, and the six pendants stay dark for Liora.</li>
+<li>The Elder's nine nights become a confession after the Choosing.</li>
+<li>The vision is shorter.</li>
+</ul></div>
+
+<h3>Cold open: the puppet show</h3>
+<p>The game opens years ago, on a past Choosing Day at dusk. The market is strung with lanterns in the seven pendant colors, and a crowd of children sits in front of a little painted puppet stage. The puppeteer tells the story, with wooden puppets on sticks and a cloth sea that ripples:</p>
+<ul>
+<li>A ship crosses the sea, fleeing the wars of Averra, carrying seven pendants, one for each divine. It wrecks on the cliffs. The survivors find a clear spring and a bay full of fish, and they stay. That's Silverspring.</li>
+<li>Long before that, in the old war, a shadow wanted the whole world for itself. The divines came down to stop it. When the shadow struck its last, terrible blow, the great owl stood in front of it, and broke into three pieces.</li>
+<li>The puppeteer holds up a little owl pendant: "And his pendant waits, to this day, for someone worthy."</li>
+</ul>
+<p>When the owl puppet steps in front of the blow, the player gets their first button: Cross to cheer, with the children.</p>
+<p>In the front row is a small girl on her father's knee: young Liora. When the show ends, a boy asks, "Will the owl choose someone this year?" The puppeteer laughs: "Not since the Wanderer." Liora's father leans down and gives her a little carved wooden owl. "Then maybe one day, it'll be you."</p>
+<p>The same carved owl, older and worn smooth, sits on the shelf above her bed. The camera finds it in the present, in her room at dawn, with Liora asleep. Outside, the festival horn sounds. It's Choosing Day again, and this year Liora is old enough to walk the ring. She sleeps through the horn. Wren taps on her shutters and yells up from the street: "Liora! It's Choosing Day! You'll miss the Proving!"</p>
 
 <h3>Silverspring at a glance</h3>
-<p>Silverspring is built up the face of a sea cliff above a sheltered bay, in three tiers joined by wooden stairs and paths cut into the rock. From the water it's a wall of houses; from the clifftop it's a bowl with the sea at the bottom.</p>
+<p>Silverspring is built up the face of a sea cliff above a sheltered bay, in three tiers joined by wooden stairs and paths cut into the rock. From the water it's a wall of houses; from the clifftop it's a bowl with the sea at the bottom. Today it's dressed for the festival.</p>
 <ul>
 <li><b>The docks</b> are at the bottom: boardwalks on stilts threading between boulders at the water's edge, rowboats moored in the gaps, drying nets, and fishing sheds leaning on the cliff. Fishers, boat builders and the net-mender live here. The dock walk also leads to the coast path to the Shore, which stays shut until Liora leaves town.</li>
 <li><b>Liora's house</b> is the last building on the docks, right beside the waterfall: a small two-story house on the rock at the foot of the cliff, with its back wall against the cliff face.</li>
-<li><b>The market</b> is on a wide rock shelf halfway up. The spring pours out of a cave mouth in the cliff wall into a round stone basin at its center; its stream crosses the market under a little footbridge and falls off the edge as a waterfall into the bay. Houses and stalls ring the basin, including the locked-out man's house with its chimney.</li>
+<li><b>The market</b> is on a wide rock shelf halfway up. The spring pours out of a cave mouth in the cliff wall into a round stone basin at its center; its stream crosses the market under a little footbridge and falls off the edge as a waterfall into the bay. Houses and stalls ring the basin, including the locked-out man's house with its chimney. On Choosing Day, the puppet stage is set up by the basin.</li>
 <li><b>The sacred temple</b> stands on a rock point over the bay at the seaward end of the market, a round domed hall with seven colored banners, with a sea cave in the rock beneath it that the tide fills. It holds the Divine Pendants.</li>
 <li><b>The clifftop</b> is a grassy ridge above everything. The Elder's house stands alone on its hill to the west, and the watchtower is out on the far tip of the headland, reached by a rope bridge.</li>
 <li><b>The training yard</b> is a fenced field up the east road on the clifftop, where the ridge meets the forest and the monster sightings have been.</li>
@@ -461,24 +479,31 @@ a.pill.wm-link{text-decoration:none;color:var(--accent)}
 <h3>Liora's house</h3>
 <p>The first thing the player does is get up out of bed. Liora's room is a short, safe space to learn moving, the camera and Cross to interact. Most things have something to say:</p>
 <ul>
-<li><b>The window</b> looks out over the bay, with the boats heading out and the waterfall roaring beside the house.</li>
-<li><b>A shelf</b> holds a little carved owl, worn smooth. Liora doesn't remember where it came from.</li>
+<li><b>The window</b> looks out over the bay, with the boats heading out and festival banners strung along the docks.</li>
+<li><b>The carved owl</b> on the shelf: her father gave it to her at the puppet show, the last Choosing Day before his boat didn't come home.</li>
 <li><b>The rug</b> has one corner that never lies flat. Players will remember it in <a href="#ch7">Chapter 7</a>, when the hatch under it opens.</li>
-<li><b>Breakfast</b> is on the table: a fish bun, the first pickup.</li>
+<li><b>Breakfast</b> is on the table: a fish bun, the first pickup. Her mother left it before the horn; the captain runs the Proving.</li>
 <li><b>The practice sword</b> hangs on a peg. She can't leave without it: the door stops her, and Wren reminds her from outside.</li>
 </ul>
-<p>Out the front door, Wren is waiting, and sets off.</p>
-<div class="co story" data-label="Settled: Liora's family">Liora lives with her mother, who is the watch captain. Her father was a fisherman, lost at sea in the strait when Liora was small; his boat never came home. The house is empty in the morning because her mother is always the first one up for the village. Everyone in Silverspring knows the captain is Liora's mother. A small reminder of her father in the house, like a glass fishing float in the window, would be a good place to say so early.</div>
+<p>Out the front door, Wren is waiting, wearing a paper owl mask pushed up on top of his head, and sets off.</p>
+<div class="co story" data-label="Settled: Liora's family">Liora lives with her mother, who is the watch captain. Her father was a fisherman, lost at sea in the strait when Liora was small; his boat never came home. He's in the game from the first scene, in the puppet show memory, and the carved owl he gave her that night has a twin in his wrecked boat at the bottom of the strait in <a href="#ch8">Chapter 8</a>. He carved two. Underneath it all, Liora's family is the branch of Selene's line that stayed in Silverspring, which is why the owl reaches for her; that comes out in Chapters 7 and 8.</div>
 
-<h3>Following Wren</h3>
-<p>Wren leads her through town to the training yard: past the docks, across the market square, past the man locked out of his house pacing at his door, past the temple (Wren mentions that the Elder has been praying in there every night), and past the Elder's house. Liora can't wander off: 18 meters from Wren she can't go any further, and Wren calls "This way!"</p>
-<p>At "There's the yard, up the road. Race you!", Wren sprints, and a prompt appears: <i>Click L3 to run!</i> At the yard gate, the watch captain is waiting: "Late again, Liora." The gate shuts behind them.</p>
+<h3>Following Wren through the festival</h3>
+<p>Wren leads her through town to the training yard, and Choosing Day gives the walk something to look at. Silverspring is dressed in the seven pendant colors: banners strung across the market, stalls selling fried fish and honey cakes, children running around in owl masks, and an owl lantern hung at the top of the market. Thalos is the town's most revered divine. There are owl carvings over the doors, and the owl pendant is the one the whole town talks about, even though it sits in the middle of the ring and nobody walks to it.</p>
+<p>The route goes past the docks, across the market square, past the puppet stage being set up for the evening, past the man locked out of his house pacing at his door, past the temple, and past the Elder's house. Liora can't wander off: 18 meters from Wren she can't go any further, and Wren calls "This way!" Festival townsfolk lines along the way:</p>
+<ul>
+<li>"Nobody's touched the owl since the Wanderer. Not in my lifetime, nor my mother's."</li>
+<li>"Every year I think this'll be the year. Every year, nothing. Lovely cakes, though."</li>
+<li>"More Mirelings on the swamp road every week. The watch was out all night again."</li>
+<li>"The spring's running weaker than my grandmother ever saw it."</li>
+</ul>
+<p>At "There's the yard, up the road. Race you!", Wren sprints, and a prompt appears: <i>Click L3 to run!</i> At the yard gate, the watch captain is waiting: "Late again, Liora."</p>
 
-<h3>The Watch Captain's drills</h3>
-<p>Liora has her wooden practice sword and three hearts. The watch captain, Liora's mother, runs the drills, one move each with a short beat between them. In the yard she's the captain first, and she's harder on Liora than on anyone.</p>
+<h3>The Proving</h3>
+<p>On Choosing Day, the young fighters show the town what they've learned before the Choosing at sunset. The training yard's fence is lined with townsfolk, cheering, eating, and heckling. Liora has her wooden practice sword and three hearts. The watch captain, Liora's mother, runs the drills, one move each with a short beat between them. In front of the town she's the captain first, and she's harder on Liora than on anyone.</p>
 <ol>
 <li><b>Combo.</b> Knock the heads off three straw dummies with the three-hit combo (Square ×3). All three hits have to land on the same dummy.</li>
-<li><b>Spin attack.</b> Hold Square until the sword glows, then let go, and knock all five heads off in one spin.</li>
+<li><b>Spin attack.</b> Hold Square until the sword glows, then let go, and knock all five heads off in one spin. The crowd goes "Ooh."</li>
 <li><b>Lock-on.</b> Hold L2 on the dummy swinging on a rope, and hit it three times.</li>
 <li><b>Side hops.</b> Locked on to the middle straw dummy, Cross + left and Cross + right, once each.</li>
 <li><b>Jump attack.</b> Locked on to the straw dummy, Cross with no direction, landing on it.</li>
@@ -486,7 +511,7 @@ a.pill.wm-link{text-decoration:none;color:var(--accent)}
 <li><b>Pole dodge.</b> In a ring with the captain, jump her low padded pole with Cross three times. Liora can't leave the ring until she's past three sweeps.</li>
 <li><b>Block, then parry.</b> The captain chops a pole down at her. Block two by holding Circle, then parry three by pressing Circle just as the pad flashes and comes down.</li>
 <li><b>Spar with Wren.</b> Wren has a shield, and hitting the front just clangs, so Liora side-hops around and hits Wren's side or back. Three hits wins. This is the idea that comes back with the rat soldiers in the first temple: not every enemy can be hit from the front.</li>
-<li><b>The real fight.</b> Three Mirelings come over the fence: low mud creatures with stubby legs and a glowing crack down their backs. They charge in straight lines and can't turn, so dodge, then hit them while they skid. Clearing them ends training.</li>
+<li><b>The interruption.</b> The watchtower horn sounds, and not the festival horn. Mirelings come over the fence: low mud creatures with stubby legs and a glowing crack down their backs. The crowd scatters. The watch, the captain and the trainees fight them off together, and Liora's part is three of them: they charge in straight lines and can't turn, so dodge, then hit them while they skid. When they're gone, the crowd creeps back to the fence, and nobody's quite cheering anymore. It doesn't make Liora special; it shows the town is in trouble even on its best day.</li>
 </ol>
 <div class="co story" data-label="Design note: no shield">Liora never carries a shield, because her left arm is the falconry arm and Thalos lands on it. She blocks with the sword itself: blade held level, braced against the glove.
 <ul>
@@ -496,13 +521,15 @@ a.pill.wm-link{text-decoration:none;color:var(--accent)}
 <li><b>A perfect parry, in the last instant, knocks projectiles back.</b> That includes Rovan dives, fireballs and shadow bolts.</li>
 </ul></div>
 
-<h3>The Elder</h3>
-<p>After training, the captain gives Liora a note for the smith, a quest item that goes in her satchel. Any time after that, the smith by his forge swaps the note for a real sword.</p>
+<h3>Until sunset</h3>
+<p>After the Proving, the captain gives Liora a note for the smith, a quest item that goes in her satchel. The town is hers until sunset: the stalls, the townsfolk, the smith, the puppet stage, and the locked-out man, who can't be helped yet.</p>
 <div class="co get" data-label="Item get (optional)">Steel Sword. From the smith, for the captain's note. It replaces the practice sword and does double the damage.</div>
-<p>A messenger kid runs up the road: "The Elder wants you at his house, NOW!", and points her west along the clifftop. At the Elder's house, he tells her that for nine nights he has heard one name in his prayers, hers: the divines want her to become a Pendant Holder. He walks her down to the sacred temple on its rock over the bay, with the same follow leash as Wren.</p>
+<p>When the sun touches the sea, the temple bell rings, and the whole town walks down to the sacred temple on its rock over the bay.</p>
 
-<h3>The pendant ceremony</h3>
-<p>The sacred temple is a round hall with a ring of six stone pedestals, each holding a pendant of colored stone carved with a divine's symbol. In the middle stands a seventh, the largest, holding a pendant carved with an owl. Liora walks the ring and passes close to all six pendants, and each one lights as she goes by. At the center, the owl pendant chooses her.</p>
+<h3>The Choosing</h3>
+<p>The sacred temple is a round hall with a ring of six stone pedestals, each holding a pendant of colored stone carved with a divine's symbol. In the middle stands a seventh, the largest, holding a pendant carved with an owl. It isn't part of the ring. The town packs in around the walls, and the Elder calls the young people up one at a time to walk the ring. If a divine wants someone, its pendant will answer.</p>
+<p>Nothing happens for anyone, as everyone expected. Wren goes just before Liora, walks the whole ring, shrugs, and grins at her. Then it's Liora's turn, and the player walks her around the ring. The six pendants stay dark as she passes. At the end of the ring, the Elder starts to thank her.</p>
+<p>Then the owl in the middle, the one nobody walks to, begins to glow. The crowd goes silent. The pendant lifts off its pedestal on its own and floats to Liora's hands. The Elder goes down on his knees. In the crowd, her mother has a hand over her mouth, proud and afraid at the same time.</p>
 <div class="co story" data-label="The Divine Pendants">The founders carried seven pendants out of Averra, one for each divine. A Pendant Holder is chosen by one pendant and only ever carries that one; the bond is for life. Liora's is Thalos's. The other six stay on their pedestals, and the game can use them later for the Council's gifts or for other Holders.
 <ul>
 <li><b>Red:</b> a flame. The Divine of Fire and Courage.</li>
@@ -513,8 +540,9 @@ a.pill.wm-link{text-decoration:none;color:var(--accent)}
 <li><b>Tan:</b> a mountain. The Divine of Stone and Earth.</li>
 <li><b>Purple, in the center:</b> the owl. Thalos, the Divine of Strength.</li>
 </ul></div>
-<p><b>The vision.</b> The pendant pulls Liora onto a dark plain, in front of Thalos: a huge owl of cracked purple light, with three dim embers on his body flickering like dying coals. He's the Divine of Strength. His body was broken into three pieces and sealed in temples across Hatu, and something in those temples is draining him. He asks her to free them, and says the old man in the hollow past the training yard keeps something that will let him help. The Elder sends her on. The captain is at the gate now.</p>
-<div class="co story" data-label="Settled: the previous Holder was Selene">Only one person has carried Thalos's pendant before: Selene, the explorer of the Second Age (<a href="#ch8">Chapter 8</a>). The glove Oren keeps was hers, the note hidden in Liora's house in Chapter 7 is hers, and the island where her descendant Maro lives is where she went when Silverspring turned on her.</div>
+<p><b>The vision.</b> The pendant pulls Liora onto a dark plain, in front of Thalos: the great owl from the puppet show, but huge, made of cracked purple light, with three dim embers on his body flickering like dying coals. He looks at her for a long moment. "You feel... familiar." Then he shows her: the ember in the swamp burning closest, a temple rotting in the marsh, and Mirelings crawling out of it and up the road toward Silverspring. "Free my temples. The man in the hollow past the training yard keeps something that will let me help you."</p>
+<p><b>After.</b> The festival turns to awe. The Elder takes Liora aside and admits that for nine nights he has heard one name in his prayers, hers, and didn't dare say so in case he was wrong. He sends her on. Her mother has gone back to the gate; the captain has a town to keep safe.</p>
+<div class="co story" data-label="Settled: the previous Holder was Selene">Only one person has carried Thalos's pendant before: Selene, the explorer of the Second Age (<a href="#ch8">Chapter 8</a>), whom Silverspring remembers only as the Wanderer. The glove Oren keeps was hers, the note hidden in Liora's house in Chapter 7 is hers, and the island where her descendant Maro lives is where she went when Silverspring turned on her.</div>
 
 <h3>Oren and the Falconry Glove</h3>
 <p>Past the east gate, in the hollow, is a small hut with a fenced yard, backed up against a low sea bluff. Its owner is <b>Oren</b>, a wiry old man who lives alone with his goat, Turnip, and doesn't get many visitors. He recognizes the pendant at once: his grandmother drew it for him. He opens a chest and unwraps a worn leather falconer's glove with a purple stone in its cuff. It belonged to the last Pendant Holder, and his grandmother, Gran Wynn, kept it for her. He's oiled it every spring since, in case.</p>
@@ -1360,7 +1388,7 @@ Embers, braziers and moss curtains wait for the Lantern Gallery, which teaches t
 <li>"Yes." Thalos: "He named it for you. Then he thought of you every time he went out."</li>
 <li>[Say nothing.] Thalos stays quiet with her for a moment.</li>
 </ul>
-<p>Either way, there's a small tin box under the boat's seat. Inside is a carved wooden owl, the twin of the one on the shelf in her room that she never knew the story of.</p>
+<p>Either way, there's a small tin box under the boat's seat. Inside is a carved wooden owl, the twin of the one he gave her at the puppet show on Choosing Day, when she was small. He carved two.</p>
 </div>
 </article>
 
